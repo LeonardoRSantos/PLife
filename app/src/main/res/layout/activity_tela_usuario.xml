@@ -10,148 +10,148 @@
 
 
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:backgroundTint="#409743"
-        app:theme="@style/Widget.AppCompat.Toolbar"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-2dp" />
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        android:background="?attr/colorPrimary"-->
+<!--        android:backgroundTint="#409743"-->
+<!--        app:theme="@style/Widget.AppCompat.Toolbar"-->
+<!--        tools:layout_editor_absoluteX="0dp"-->
+<!--        tools:layout_editor_absoluteY="-2dp" />-->
 
 
 
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="61dp"
-        android:layout_height="48dp"
-        app:srcCompat="@drawable/UserAvatar01"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="6dp" />
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView13"-->
+<!--        android:layout_width="61dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        app:srcCompat="@drawable/UserAvatar01"-->
+<!--        tools:layout_editor_absoluteX="5dp"-->
+<!--        tools:layout_editor_absoluteY="6dp" />-->
 
-    <androidx.gridlayout.widget.GridLayout
-        android:layout_width="299dp"
-        android:layout_height="187dp"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="290dp">
+<!--    <androidx.gridlayout.widget.GridLayout-->
+<!--        android:layout_width="299dp"-->
+<!--        android:layout_height="187dp"-->
+<!--        tools:layout_editor_absoluteX="56dp"-->
+<!--        tools:layout_editor_absoluteY="290dp">-->
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/back_ground_button"
-            android:backgroundTint="#2ECD34"
-            android:text="Tarefas"
-            app:layout_column="0"
-            app:layout_row="0" />
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/button14"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="16dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:background="@drawable/back_ground_button"-->
+<!--            android:backgroundTint="#2ECD34"-->
+<!--            android:text="Tarefas"-->
+<!--            app:layout_column="0"-->
+<!--            app:layout_row="0" />-->
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/back_ground_button"
-            android:backgroundTint="#2ECD34"
-            android:text="Pontos"
-            app:layout_column="0"
-            app:layout_row="1" />
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/button15"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="16dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:background="@drawable/back_ground_button"-->
+<!--            android:backgroundTint="#2ECD34"-->
+<!--            android:text="Pontos"-->
+<!--            app:layout_column="0"-->
+<!--            app:layout_row="1" />-->
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/back_ground_button"
-            android:backgroundTint="#2ECD34"
-            android:text="Vantagens"
-            app:layout_column="1"
-            app:layout_row="0" />
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/button16"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="16dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:background="@drawable/back_ground_button"-->
+<!--            android:backgroundTint="#2ECD34"-->
+<!--            android:text="Vantagens"-->
+<!--            app:layout_column="1"-->
+<!--            app:layout_row="0" />-->
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/back_ground_button"
-            android:backgroundTint="#2ECD34"
-            android:text="Premios"
-            app:layout_column="1"
-            app:layout_row="1" />
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/button17"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="16dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:background="@drawable/back_ground_button"-->
+<!--            android:backgroundTint="#2ECD34"-->
+<!--            android:text="Premios"-->
+<!--            app:layout_column="1"-->
+<!--            app:layout_row="1" />-->
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/back_ground_button"
-            android:backgroundTint="#2ECD34"
-            android:text="Suporte"
-            app:layout_column="2"
-            app:layout_row="0" />
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/button18"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="16dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:background="@drawable/back_ground_button"-->
+<!--            android:backgroundTint="#2ECD34"-->
+<!--            android:text="Suporte"-->
+<!--            app:layout_column="2"-->
+<!--            app:layout_row="0" />-->
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button19"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/back_ground_button"
-            android:backgroundTint="#2ECD34"
-            android:text="Trocas"
-            app:layout_column="2"
-            app:layout_row="1" />
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/button19"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="16dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:background="@drawable/back_ground_button"-->
+<!--            android:backgroundTint="#2ECD34"-->
+<!--            android:text="Trocas"-->
+<!--            app:layout_column="2"-->
+<!--            app:layout_row="1" />-->
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/back_ground_button"
-            android:backgroundTint="#2ECD34"
-            android:text="Historico"
-            app:layout_column="0"
-            app:layout_row="2" />
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/button20"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="16dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:background="@drawable/back_ground_button"-->
+<!--            android:backgroundTint="#2ECD34"-->
+<!--            android:text="Historico"-->
+<!--            app:layout_column="0"-->
+<!--            app:layout_row="2" />-->
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/back_ground_button"
-            android:backgroundTint="#2ECD34"
-            android:text="PENDENTES"
-            app:layout_column="1"
-            app:layout_row="2" />
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/button21"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="16dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:background="@drawable/back_ground_button"-->
+<!--            android:backgroundTint="#2ECD34"-->
+<!--            android:text="PENDENTES"-->
+<!--            app:layout_column="1"-->
+<!--            app:layout_row="2" />-->
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/back_ground_button"
-            android:backgroundTint="#2ECD34"
-            android:text="concluidas"
-            app:layout_column="2"
-            app:layout_row="2" />
-    </androidx.gridlayout.widget.GridLayout>
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/button23"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="16dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:background="@drawable/back_ground_button"-->
+<!--            android:backgroundTint="#2ECD34"-->
+<!--            android:text="concluidas"-->
+<!--            app:layout_column="2"-->
+<!--            app:layout_row="2" />-->
+<!--    </androidx.gridlayout.widget.GridLayout>-->
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="51dp"
-        android:layout_height="18dp"
-        android:text="Usuario"
-        tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="6dp" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView3"-->
+<!--        android:layout_width="51dp"-->
+<!--        android:layout_height="18dp"-->
+<!--        android:text="Usuario"-->
+<!--        tools:layout_editor_absoluteX="66dp"-->
+<!--        tools:layout_editor_absoluteY="6dp" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

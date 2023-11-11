@@ -2,8 +2,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle"> <!--Tipo de Shape-->
 
-    <corners android:radius="20dp" <!--Arredondamento do Botão-->
-    <solid android:color="@color/VerdeBotao"/>
+<!--    <corners android:radius="20dp"-->
+<!--    <solid android:color="@color/VerdeBotao"/>-->
 
 
 
