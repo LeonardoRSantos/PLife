@@ -6,12 +6,14 @@
 
     public interface RegistrationService {
 
-        String cadastrarCpfUser(CpfUser cpfUser);
+//        String cadastrarCpfUser(CpfUser cpfUser);
 //        String cadastrarCpfUser(CpfUser cpfUser, Endereco address);
 
         // Método para cadastrar uma empresa (CNPJ)
 //        String cadastrarCnpjUser(CnpjUser cnpjUser, Endereco address);
-        String cadastrarCnpjUser(CnpjUser cnpjUser);
+//        String cadastrarCnpjUser(CnpjUser cnpjUser);
+
+        String cadastrarUsuario(Object user);
 
         String validarCPF(String cpfUser);
 

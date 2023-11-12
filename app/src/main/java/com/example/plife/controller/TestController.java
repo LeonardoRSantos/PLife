@@ -9,30 +9,33 @@ import com.example.plife.service.impl.RegistrationServiceImpl;
 
 public class TestController {
 
+
     private RegistrationService registrationService;
 
-    public TestController() {
-        this.registrationService = new RegistrationServiceImpl();
+    public TestController(RegistrationService registrationService) {
+        this.registrationService = registrationService;
     }
 
     public void testarCadastroCPF() {
         // Simulando dados de entrada
-        CpfUser cpfUser = new CpfUser("60525455345", "leonardo@gmail.com","123456789", Role.ROLE_USER);
+        String cpf = "60525455345";
+        String email = "leonardo@gmail.com";
+        String senha = "123456789";
+        Role role = Role.ROLE_USER;
 
-
-        registrationService.cadastrarCpfUser(cpfUser);
-
-
+        // Chamando o método de cadastro de CPF
+        registrationService.cadastrarUsuario(new CpfUser(cpf, email, senha, role));
     }
 
     public void testarCadastroCNPJ() {
         // Simulando dados de entrada
-        CnpjUser cnpjUser = new CnpjUser("475537080001333", "email@empresa.com", "1234567", Role.ROLE_COMPANY);
-
+        String cnpj = "4755370800013";
+        String email = "email@empresa.com";
+        String senha = "1234567";
+        Role role = Role.ROLE_COMPANY;
 
         // Chamando o método de cadastro de CNPJ
-        registrationService.cadastrarCnpjUser(cnpjUser);
-
+        registrationService.cadastrarUsuario(new CnpjUser(cnpj, email, senha, role));
     }
 
 

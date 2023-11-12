@@ -10,25 +10,33 @@ public class CadastroController {
 
     private RegistrationService registrationService;
 
-    public CadastroController() {
-        this.registrationService = new RegistrationServiceImpl();
+    public CadastroController(RegistrationService registrationService) {
+        this.registrationService = registrationService;
     }
 
-    public void cadastrarCpfUser(String cpf, String email, String senha) {
-        String validationResult = validarCpf(cpf);
-        if ("CPF válido".equals(validationResult)) {
-            registrationService.cadastrarCpfUser(new CpfUser(cpf, email, senha, Role.ROLE_USER));
+    public void cadastrarUsuario(String documento, String email, String senha, Role role) {
+        String validationResult;
+
+        if (role == Role.ROLE_USER) {
+            validationResult = registrationService.validarCPF(documento);
+        } else if (role == Role.ROLE_COMPANY) {
+            validationResult = registrationService.validarCNPJ(documento);
         } else {
-            System.out.println("CPF inválido. Cadastro não realizado. Detalhes: " + validationResult);
+            // Lógica para outros tipos de usuário, se aplicável
+            validationResult = "Tipo de usuário não suportado";
         }
-    }
 
-    public void cadastrarCnpjUser(String cnpj, String email, String senha) {
-        String validationResult = validarCnpj(cnpj);
-        if ("CNPJ válido".equals(validationResult)) {
-            registrationService.cadastrarCnpjUser(new CnpjUser(cnpj, email, senha, Role.ROLE_COMPANY));
+        if ("Documento válido".equals(validationResult)) {
+            // Ajuste para chamar o método correto com base no tipo de usuário
+            if (role == Role.ROLE_USER) {
+                registrationService.cadastrarUsuario(new CpfUser(documento, email, senha, role));
+            } else if (role == Role.ROLE_COMPANY) {
+                registrationService.cadastrarUsuario(new CnpjUser(documento, email, senha, role));
+            }
+
+            System.out.println("Cadastro bem-sucedido. Usuário: " + documento + ", Perfil: " + role);
         } else {
-            System.out.println("CNPJ inválido. Cadastro não realizado. Detalhes: " + validationResult);
+            System.out.println("Cadastro falhou. Detalhes: " + validationResult);
         }
     }
 

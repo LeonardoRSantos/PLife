@@ -5,37 +5,95 @@ import com.example.plife.model.CnpjUser;
 import com.example.plife.model.User;
 import com.example.plife.model.enums.Role;
 import com.example.plife.service.RegistrationService;
+import com.example.plife.service.UserService;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class RegistrationServiceImpl implements RegistrationService {
 
+    private UserService userService;
+
+    public RegistrationServiceImpl(UserService userService) {
+        this.userService = userService;
+    }
+
+
+    //    @Override
+//    public String cadastrarCpfUser(CpfUser cpfUser) {
+//        String validationResult = validarCPF(cpfUser.getCPF());
+//        if ("CPF válido".equals(validationResult)) {
+//            UserServiceImpl userServiceImpl = new UserServiceImpl();
+//            User user = new User(cpfUser.getCPF(), cpfUser.getPassword(), Role.ROLE_USER);
+//            return userServiceImpl.cadastrarUsuario(user);
+//        } else {
+//            System.out.println("CPF inválido: " + validationResult);
+//            return "CPF inválido: " + validationResult;
+//        }
+//    }
+//
+//    @Override
+//    public String cadastrarCnpjUser(CnpjUser cnpjUser) {
+//        String validationResult = validarCNPJ(cnpjUser.getCNPJ());
+//        if ("CNPJ válido".equals(validationResult)) {
+//            UserServiceImpl userServiceImpl = new UserServiceImpl();
+//            User user = new User(cnpjUser.getCNPJ(), cnpjUser.getPassword(), Role.ROLE_COMPANY);
+//            return userServiceImpl.cadastrarUsuario(user);
+//        } else {
+//            System.out.println("CNPJ inválido: " + validationResult);
+//            return "CNPJ inválido: " + validationResult;
+//        }
+//    }
+//        @Override
+//        public String cadastrarUsuario(Object user) {
+//            if (user instanceof CpfUser) {
+//                CpfUser cpfUser = (CpfUser) user;
+//                String validationResult = validarCPF(cpfUser.getCPF());
+//                if ("CPF válido".equals(validationResult)) {
+//                    return userService.cadastrarUsuario(new CpfUser(cpfUser.getCPF(), cpfUser.getEmail(), cpfUser.getPassword(), cpfUser.getRole()));
+//                } else {
+//                    System.out.println("CPF inválido: " + validationResult);
+//                    return "CPF inválido: " + validationResult;
+//                }
+//            } else if (user instanceof CnpjUser) {
+//                CnpjUser cnpjUser = (CnpjUser) user;
+//                String validationResult = validarCNPJ(cnpjUser.getCNPJ());
+//                if ("CNPJ válido".equals(validationResult)) {
+//                    return userService.cadastrarUsuario(new CnpjUser(cnpjUser.getCNPJ(), cnpjUser.getEmail(), cnpjUser.getPassword(), cnpjUser.getRole()));
+//                } else {
+//                    System.out.println("CNPJ inválido: " + validationResult);
+//                    return "CNPJ inválido: " + validationResult;
+//                }
+//            } else {
+//                return "Tipo de usuário não suportado";
+//            }
+//        }
+
     @Override
-    public String cadastrarCpfUser(CpfUser cpfUser) {
-        String validationResult = validarCPF(cpfUser.getCPF());
-        if ("CPF válido".equals(validationResult)) {
-            UserServiceImpl userServiceImpl = new UserServiceImpl();
-            User user = new User(cpfUser.getCPF(), cpfUser.getPassword(), Role.ROLE_USER);
-            return userServiceImpl.cadastrarUsuario(user);
+    public String cadastrarUsuario(Object user) {
+        if (user instanceof CpfUser) {
+            CpfUser cpfUser = (CpfUser) user;
+            String validationResult = validarCPF(cpfUser.getCPF());
+            if ("CPF válido".equals(validationResult)) {
+                return userService.cadastrarUsuario(new User(cpfUser.getCPF(), cpfUser.getPassword(), cpfUser.getRole()));
+            } else {
+                System.out.println("CPF inválido: " + validationResult);
+                return "CPF inválido: " + validationResult;
+            }
+        } else if (user instanceof CnpjUser) {
+            CnpjUser cnpjUser = (CnpjUser) user;
+            String validationResult = validarCNPJ(cnpjUser.getCNPJ());
+            if ("CNPJ válido".equals(validationResult)) {
+                return userService.cadastrarUsuario(new User(cnpjUser.getCNPJ(), cnpjUser.getPassword(), cnpjUser.getRole()));
+            } else {
+                System.out.println("CNPJ inválido: " + validationResult);
+                return "CNPJ inválido: " + validationResult;
+            }
         } else {
-            System.out.println("CPF inválido: " + validationResult);
-            return "CPF inválido: " + validationResult;
+            return "Tipo de usuário não suportado";
         }
     }
 
-    @Override
-    public String cadastrarCnpjUser(CnpjUser cnpjUser) {
-        String validationResult = validarCNPJ(cnpjUser.getCNPJ());
-        if ("CNPJ válido".equals(validationResult)) {
-            UserServiceImpl userServiceImpl = new UserServiceImpl();
-            User user = new User(cnpjUser.getCNPJ(), cnpjUser.getPassword(), Role.ROLE_COMPANY);
-            return userServiceImpl.cadastrarUsuario(user);
-        } else {
-            System.out.println("CNPJ inválido: " + validationResult);
-            return "CNPJ inválido: " + validationResult;
-        }
-    }
 
     @Override
     public String validarCPF(String cpf) {
