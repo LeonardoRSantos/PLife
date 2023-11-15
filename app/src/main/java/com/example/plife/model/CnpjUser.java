@@ -5,6 +5,7 @@ import android.location.Address;
 import com.example.plife.model.enums.Role;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class CnpjUser  extends User {
 
@@ -42,6 +43,20 @@ public class CnpjUser  extends User {
 
     public void setNomeFantasia(String nomeFantasia) {
         this.nomeFantasia = nomeFantasia;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        CnpjUser cnpjUser = (CnpjUser) o;
+        return Objects.equals(CNPJ, cnpjUser.CNPJ) && Objects.equals(razaoSocial, cnpjUser.razaoSocial) && Objects.equals(nomeFantasia, cnpjUser.nomeFantasia);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), CNPJ, razaoSocial, nomeFantasia);
     }
 }
 

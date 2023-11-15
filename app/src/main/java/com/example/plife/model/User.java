@@ -5,6 +5,7 @@ package com.example.plife.model;
 import com.example.plife.model.enums.Role;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class User {
     private String name;
@@ -77,5 +78,18 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(name, user.name) && Objects.equals(email, user.email) && Objects.equals(password, user.password) && Objects.equals(endereco, user.endereco) && Objects.equals(birthDate, user.birthDate) && Objects.equals(phoneNumber, user.phoneNumber) && role == user.role;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, email, password, endereco, birthDate, phoneNumber, role);
     }
 }
