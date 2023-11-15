@@ -15,12 +15,12 @@
         android:src="@drawable/LogodaPlife"
         android:layout_marginTop="200dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_centerHorizontal="true" />
 
 
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -131,7 +131,7 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:drawableEnd="@drawable/ic_email_white_24dp"
                 android:drawablePadding="16dp"
                 android:fontFamily="@font/calibri"
@@ -155,7 +155,7 @@
             <EditText
 
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:drawableEnd="@drawable/ic_lock_white_24dp"
                 android:drawablePadding="16dp"
                 android:fontFamily="@font/calibri"
