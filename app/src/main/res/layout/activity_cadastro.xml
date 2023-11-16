@@ -76,14 +76,13 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <!-- TODO: Adicionar o icon person -->
         <EditText
         android:id="@+id/cpfCnpj"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:drawableRight="@drawable/ic_email_white_24dp"
+        android:drawableRight="@drawable/ic_cpf_cnpj"
         android:fontFamily="@font/prompt"
         android:hint="CPF/CNPJ"
         android:textSize="15sp"
