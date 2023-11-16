@@ -22,13 +22,13 @@
         <item name="colorControlHighlight">@color/textInputLayout</item>
         <item name="colorAccent">@color/textInputLayout</item>
         <item name="android:textColorHint">@color/textInputLayout</item>
-        <item name="boxStrokeColor">@color/custom_white</item> <!-- Define a cor da linha de indicação como branca -->
+        <item name="boxStrokeColor">@color/VerdeBarra</item> <!-- Define a cor da linha de indicação como branca -->
     </style>
 
 
 
     <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <item name="boxStrokeColor">@android:color/white</item> <!-- Define a cor da linha de indicação como branca -->
+        <item name="boxStrokeColor">@color/VerdeBarra</item> <!-- Define a cor da linha de indicação como branca -->
     </style>
 
 
@@ -40,4 +40,21 @@
 
 <!--    </resources>-->
 
+    <style name="ContainerComponets">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">250dp</item>
+        <item name="android:background">@drawable/container_componets</item>
+        <item name="android:layout_margin">20dp</item>
+
+
+
+    </style>
+    
+    <style name="EditText">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/edit_text</item>
+    </style>
+    
 </resources>

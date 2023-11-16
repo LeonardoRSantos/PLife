@@ -1,157 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background=" #e0fcac"
-    tools:context=".TelaUsuario">
+    android:background="#B2EA6E"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="?attr/colorPrimary"
+        android:backgroundTint="#409743"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="2dp">
 
 
+        <ImageView
+            android:id="@+id/imageBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/UserAvatar01" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="?attr/colorPrimary"
+                android:backgroundTint="#409743"
+                android:fontFamily="@font/prompt_semibold"
+                android:text="Usuario"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:backgroundTint="#409743"
+                android:fontFamily="@font/prompt_semibold"
+                android:text="Pontos:00,00"
+                android:textSize="13sp" />
+        </LinearLayout>
 
 
-<!--    <androidx.appcompat.widget.Toolbar-->
-<!--        android:id="@+id/toolbar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="?attr/actionBarSize"-->
-<!--        android:background="?attr/colorPrimary"-->
-<!--        android:backgroundTint="#409743"-->
-<!--        app:theme="@style/Widget.AppCompat.Toolbar"-->
-<!--        tools:layout_editor_absoluteX="0dp"-->
-<!--        tools:layout_editor_absoluteY="-2dp" />-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="2dp"
+        android:layout_marginTop="80dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
 
+    <ImageView
+            android:id="@+id/LogoPlife"
+            android:layout_width="wrap_content"
+            android:layout_height="197dp"
+            android:layout_marginTop="13dp"
+            android:fontFamily="@font/prompt"
+            app:srcCompat="@drawable/LogodaPlife" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView13"-->
-<!--        android:layout_width="61dp"-->
-<!--        android:layout_height="48dp"-->
-<!--        app:srcCompat="@drawable/UserAvatar01"-->
-<!--        tools:layout_editor_absoluteX="5dp"-->
-<!--        tools:layout_editor_absoluteY="6dp" />-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ButtonCarteira"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:background="@drawable/back_ground_button"
+            android:drawableRight="@drawable/ic_arrow"
+            android:fontFamily="@font/prompt"
+            android:padding="15dp"
+            android:text="Carteira"
+            android:textColor="@color/TextoBotões"
+            android:textSize="16sp" />
 
-<!--    <androidx.gridlayout.widget.GridLayout-->
-<!--        android:layout_width="299dp"-->
-<!--        android:layout_height="187dp"-->
-<!--        tools:layout_editor_absoluteX="56dp"-->
-<!--        tools:layout_editor_absoluteY="290dp">-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ButtonTarefas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:background="@drawable/back_ground_button"
+            android:drawableRight="@drawable/ic_arrow"
+            android:fontFamily="@font/prompt"
+            android:padding="15dp"
+            android:text="Tarefas"
+            android:textColor="@color/TextoBotões"
+            android:textSize="16sp" />
 
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/button14"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginRight="16dp"-->
-<!--            android:layout_marginBottom="16dp"-->
-<!--            android:background="@drawable/back_ground_button"-->
-<!--            android:backgroundTint="#2ECD34"-->
-<!--            android:text="Tarefas"-->
-<!--            app:layout_column="0"-->
-<!--            app:layout_row="0" />-->
-
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/button15"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginRight="16dp"-->
-<!--            android:layout_marginBottom="16dp"-->
-<!--            android:background="@drawable/back_ground_button"-->
-<!--            android:backgroundTint="#2ECD34"-->
-<!--            android:text="Pontos"-->
-<!--            app:layout_column="0"-->
-<!--            app:layout_row="1" />-->
-
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/button16"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginRight="16dp"-->
-<!--            android:layout_marginBottom="16dp"-->
-<!--            android:background="@drawable/back_ground_button"-->
-<!--            android:backgroundTint="#2ECD34"-->
-<!--            android:text="Vantagens"-->
-<!--            app:layout_column="1"-->
-<!--            app:layout_row="0" />-->
-
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/button17"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginRight="16dp"-->
-<!--            android:layout_marginBottom="16dp"-->
-<!--            android:background="@drawable/back_ground_button"-->
-<!--            android:backgroundTint="#2ECD34"-->
-<!--            android:text="Premios"-->
-<!--            app:layout_column="1"-->
-<!--            app:layout_row="1" />-->
-
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/button18"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginRight="16dp"-->
-<!--            android:layout_marginBottom="16dp"-->
-<!--            android:background="@drawable/back_ground_button"-->
-<!--            android:backgroundTint="#2ECD34"-->
-<!--            android:text="Suporte"-->
-<!--            app:layout_column="2"-->
-<!--            app:layout_row="0" />-->
-
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/button19"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginRight="16dp"-->
-<!--            android:layout_marginBottom="16dp"-->
-<!--            android:background="@drawable/back_ground_button"-->
-<!--            android:backgroundTint="#2ECD34"-->
-<!--            android:text="Trocas"-->
-<!--            app:layout_column="2"-->
-<!--            app:layout_row="1" />-->
-
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/button20"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginRight="16dp"-->
-<!--            android:layout_marginBottom="16dp"-->
-<!--            android:background="@drawable/back_ground_button"-->
-<!--            android:backgroundTint="#2ECD34"-->
-<!--            android:text="Historico"-->
-<!--            app:layout_column="0"-->
-<!--            app:layout_row="2" />-->
-
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/button21"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginRight="16dp"-->
-<!--            android:layout_marginBottom="16dp"-->
-<!--            android:background="@drawable/back_ground_button"-->
-<!--            android:backgroundTint="#2ECD34"-->
-<!--            android:text="PENDENTES"-->
-<!--            app:layout_column="1"-->
-<!--            app:layout_row="2" />-->
-
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/button23"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginRight="16dp"-->
-<!--            android:layout_marginBottom="16dp"-->
-<!--            android:background="@drawable/back_ground_button"-->
-<!--            android:backgroundTint="#2ECD34"-->
-<!--            android:text="concluidas"-->
-<!--            app:layout_column="2"-->
-<!--            app:layout_row="2" />-->
-<!--    </androidx.gridlayout.widget.GridLayout>-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/textView3"-->
-<!--        android:layout_width="51dp"-->
-<!--        android:layout_height="18dp"-->
-<!--        android:text="Usuario"-->
-<!--        tools:layout_editor_absoluteX="66dp"-->
-<!--        tools:layout_editor_absoluteY="6dp" />-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ButtonLoja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:background="@drawable/back_ground_button"
+            android:drawableRight="@drawable/ic_arrow"
+            android:fontFamily="@font/prompt"
+            android:padding="15dp"
+            android:text="Loja"
+            android:textColor="@color/TextoBotões"
+            android:textSize="16sp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ButtonSuporte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:background="@drawable/back_ground_button"
+            android:drawableRight="@drawable/ic_arrow"
+            android:fontFamily="@font/prompt"
+            android:padding="15dp"
+            android:text="Suporte"
+            android:textColor="@color/TextoBotões"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

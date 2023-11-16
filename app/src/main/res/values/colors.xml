@@ -5,7 +5,12 @@
     <color name="colorAccent">#FFFFFF</color>
     <color name="textInputLayout">#96ffffff</color>
     <color name="custom_white">#FFFFFF</color>
-    <color name="VerdeBotao">#2ECD34</color>
+    <color name="BrancoBotão">#FFFFFF</color>
     <color name="VerdeBarra">#409743</color>
+    <color name="TextoBotões">#D01C3A1D</color>
+    <color name="Lima">#32CD32</color>
+    <color name="Green">#008000</color>
+    <color name="LGreen">#90EE90</color>
+
 
 </resources>
