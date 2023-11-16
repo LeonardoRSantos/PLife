@@ -21,7 +21,7 @@ public class LoginServiceImpl implements LoginService {
     public String fazerLogin(String login, String senha) {
         if (login.matches("\\d{11}")) { // Se o login é um CPF
             CpfUser cpfUser = new CpfUser(login, null, senha, null);
-            String validationResult = registrationService.validarCPF(cpfUser.getCPF());
+            String validationResult = registrationService.validarDocumento(cpfUser.getCPF());
 
             if ("CPF válido".equals(validationResult)) {
                 String existeUsuarioResult = userService.existeUsuario(cpfUser, null);
@@ -36,7 +36,7 @@ public class LoginServiceImpl implements LoginService {
             }
         } else if (login.matches("\\d{14}")) { // Se o login é um CNPJ
             CnpjUser cnpjUser = new CnpjUser(login, null, senha, null);
-            String validationResult = registrationService.validarCNPJ(cnpjUser.getCNPJ());
+            String validationResult = registrationService.validarDocumento(cnpjUser.getCNPJ());
 
             if ("CNPJ válido".equals(validationResult)) {
                 String existeUsuarioResult = userService.existeUsuario(null, cnpjUser);
@@ -49,15 +49,7 @@ public class LoginServiceImpl implements LoginService {
             } else {
                 return "Login falhou. Verifique suas credenciais.";
             }
-        } else if (login.contains("@")) { // Se o login é um email
-            // Lógica de validação de email
-            // ...
-
-            // Restante da lógica de login com email
-            // ...
-
-            return "Login bem-sucedido. Usuário: " + login + ", Perfil: [Defina o perfil aqui]";
-        } else {
+        }  else {
             return "Tipo de usuário não suportado para login.";
         }
     }

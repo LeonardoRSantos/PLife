@@ -22,7 +22,7 @@ public class RegistrationServiceImpl implements RegistrationService {
     public String   cadastrarUsuario(Object user) {
         if (user instanceof CpfUser) {
             CpfUser cpfUser = (CpfUser) user;
-            String validationResult = validarCPF(cpfUser.getCPF());
+            String validationResult = validarDocumento(cpfUser.getCPF());
             if ("CPF válido".equals(validationResult)) {
 //                return userService.cadastrarUsuario(new User(cpfUser.getCPF(), cpfUser.getPassword(), cpfUser.getRole()));
                 return userService.cadastrarUsuario(cpfUser);
@@ -32,7 +32,7 @@ public class RegistrationServiceImpl implements RegistrationService {
             }
         } else if (user instanceof CnpjUser) {
             CnpjUser cnpjUser = (CnpjUser) user;
-            String validationResult = validarCNPJ(cnpjUser.getCNPJ());
+            String validationResult = validarDocumento(cnpjUser.getCNPJ());
             if ("CNPJ válido".equals(validationResult)) {
 //                return userService.cadastrarUsuario(new User(cnpjUser.getCNPJ(), cnpjUser.getPassword(), cnpjUser.getRole()));
                 return userService.cadastrarUsuario(cnpjUser);
@@ -45,50 +45,36 @@ public class RegistrationServiceImpl implements RegistrationService {
         }
     }
 
-
     @Override
-    public String validarCPF(String cpf) {
+    public String validarDocumento(String documento) {
+        documento = documento.replace(".", "").replace("-", "").replace("/", "").trim();
+
+        if (documento == null || (documento.length() != 11 && documento.length() != 14) || isDocumentoPadrao(documento)) {
+            return "Verifique o formato e os dígitos.";
+        }
+
         try {
-            cpf = cpf.replace(".", "").replace("-", "").trim();
+            Long.parseLong(documento);
 
-            if (cpf == null || cpf.length() != 11 || isCPFPadrao(cpf)) {
-                return "Verifique o formato e os dígitos.";
+            if (documento.length() == 11) {
+                // É um CPF
+                if (!calcularDigitosVerificadores(documento.substring(0, 9)).equals(documento.substring(9, 11))) {
+                    return "CPF inválido, informe um CPF válido.";
+                }
+                return "CPF válido";
+            } else if (documento.length() == 14) {
+                // É um CNPJ
+                if (!calcularDigitosVerificadoresCNPJ(documento.substring(0, 12)).equals(documento.substring(12, 14))) {
+                    return "CNPJ inválido, informe um CNPJ válido.";
+                }
+                return "CNPJ válido";
+            } else {
+                return "Documento inválido";
             }
-
-            Long.parseLong(cpf);
-
-            if (!calcularDigitosVerificadores(cpf.substring(0, 9)).equals(cpf.substring(9, 11))) {
-                return "Dígitos verificadores não correspondem.";
-            }
-
-            return "CPF válido";
         } catch (NumberFormatException e) {
             return "Deve conter apenas números.";
         }
     }
-
-    @Override
-    public String validarCNPJ(String cnpj) {
-        try {
-            cnpj = cnpj.replace(".", "").replace("-", "").replace("/", "").trim();
-
-            if (cnpj == null || cnpj.length() != 14 || isCNPJPadrao(cnpj)) {
-                return "Verifique o formato e os dígitos.";
-            }
-
-            Long.parseLong(cnpj);
-
-            if (!calcularDigitosVerificadoresCNPJ(cnpj.substring(0, 12)).equals(cnpj.substring(12, 14))) {
-                return "Dígitos verificadores não correspondem.";
-            }
-
-            return "CNPJ válido";
-        } catch (NumberFormatException e) {
-            return "Deve conter apenas números.";
-        }
-    }
-
-    // Métodos auxiliares
 
     private String calcularDigitosVerificadores(String num) {
         Integer primDig, segDig;
@@ -148,9 +134,11 @@ public class RegistrationServiceImpl implements RegistrationService {
         return primeiroDigito + "" + segundoDigito;
     }
 
-    private boolean isCNPJPadrao(String cnpj) {
-        List<String> cnpjsPadrao = Arrays.asList("00.000.000/0000-00", "11.111.111/1111-11", "22.222.222/2222-22");
-        String cnpjSemPontos = cnpj.replace(".", "").replace("-", "").replace("/", "").trim();
-        return cnpjsPadrao.contains(cnpjSemPontos);
+    private boolean isDocumentoPadrao(String documento) {
+        List<String> documentosPadrao = Arrays.asList("000.000.000-00", "11.111.111-11", "22.222.222-22", "00.000.000/0000-00", "11.111.111/1111-11", "22.222.222/2222-22");
+        String documentoSemPontos = documento.replace(".", "").replace("-", "").replace("/", "").trim();
+        return documentosPadrao.contains(documentoSemPontos);
     }
+
+
 }

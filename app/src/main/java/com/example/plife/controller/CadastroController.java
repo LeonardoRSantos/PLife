@@ -4,7 +4,6 @@ import com.example.plife.model.CnpjUser;
 import com.example.plife.model.CpfUser;
 import com.example.plife.model.enums.Role;
 import com.example.plife.service.RegistrationService;
-import com.example.plife.service.impl.RegistrationServiceImpl;
 
 public class CadastroController {
 
@@ -18,9 +17,9 @@ public class CadastroController {
         String validationResult;
 
         if (role == Role.ROLE_USER) {
-            validationResult = registrationService.validarCPF(documento);
+            validationResult = registrationService.validarDocumento(documento);
         } else if (role == Role.ROLE_COMPANY) {
-            validationResult = registrationService.validarCNPJ(documento);
+            validationResult = registrationService.validarDocumento(documento);
         } else {
             // Lógica para outros tipos de usuário, se aplicável
             validationResult = "Tipo de usuário não suportado";
@@ -40,11 +39,7 @@ public class CadastroController {
         }
     }
 
-    private String validarCpf(String cpf) {
-        return registrationService.validarCPF(cpf);
-    }
-
-    private String validarCnpj(String cnpj) {
-        return registrationService.validarCNPJ(cnpj);
+    public String validarDocumento(String documento){
+        return registrationService.validarDocumento(documento);
     }
 }
