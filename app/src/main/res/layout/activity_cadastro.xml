@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#B2EA6E"
+    tools:context=".ui.cadastro.CadastroActivity"
     android:orientation="vertical">
 
 
@@ -86,22 +87,22 @@
         android:fontFamily="@font/prompt"
         android:hint="CPF/CNPJ"
         android:textSize="15sp"
-        android:maxLength="14"/> <!-- TODO: Criar uma mascara -->
+        />
 
         <Button
-            android:id="@+id/continuar"
+            android:id="@+id/btnContinuar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginRight="50dp"
             android:background="@drawable/back_ground_button"
+            android:fontFamily="@font/calibri"
             android:text="Continuar"
             android:textAllCaps="false"
-            android:fontFamily="@font/calibri"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="200dp"
-            android:layout_marginRight="50dp"
             android:textColor="#D01C3A1D"
             android:textSize="16sp"
-            android:textStyle="bold"            />
+            android:textStyle="bold" />
     </LinearLayout>
 
 

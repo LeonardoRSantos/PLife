@@ -135,7 +135,7 @@
                 android:drawableEnd="@drawable/ic_email_white_24dp"
                 android:drawablePadding="16dp"
                 android:fontFamily="@font/calibri"
-                android:hint="Insira seu e-mal ou CPF/CNPJ"
+                android:hint="Insira seu CPF/CNPJ"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:textColor="@color/VerdeBarra"
@@ -175,6 +175,7 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/btnRegistrar"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="16dp"
@@ -187,6 +188,7 @@
                 android:textStyle="bold" />
 
             <Button
+                android:id="@+id/btnEntrar"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="16dp"

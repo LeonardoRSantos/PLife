@@ -12,15 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PLife"
         tools:targetApi="31">
+
         <activity
-            android:name=".ContinuacaoCadastro"
+            android:name=".ui.cadastro.CadastroActivity"
             android:exported="false" />
         <activity
-            android:name=".Cadastro"
+            android:name=".ui.cadastro.CadastroUserActivity"
             android:exported="false" />
-        <activity
-            android:name=".TelaUsuario"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".TelaUsuario"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".MainActivity"
             android:exported="true">

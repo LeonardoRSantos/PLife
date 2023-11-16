@@ -1,7 +1,12 @@
 package com.example.plife;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import com.example.plife.controller.TestController;
 import com.example.plife.controller.TestLoginController;
 import com.example.plife.model.enums.Role;
@@ -11,6 +16,7 @@ import com.example.plife.service.UserService;
 import com.example.plife.service.impl.LoginServiceImpl;
 import com.example.plife.service.impl.RegistrationServiceImpl;
 import com.example.plife.service.impl.UserServiceImpl;
+import com.example.plife.ui.cadastro.CadastroActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +41,17 @@ public class MainActivity extends AppCompatActivity {
 
         // Testar o login
         testarLogin();
+
+        // Adicione um ouvinte de clique ao botão Registrar
+        Button btnRegistrar = findViewById(R.id.btnRegistrar);
+        btnRegistrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Inicie a atividade de cadastro ao clicar no botão Registrar
+                Intent intent = new Intent(MainActivity.this, CadastroActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     // Método de teste de cadastro
@@ -52,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         // Crie uma instância do seu TestLoginController
         TestLoginController testLoginController = new TestLoginController(loginService, registrationService, userService);
 
-        // Teste o login com CPF, email, CNPJ, e email da empresa
+        // Teste o login com CPF, email, CNPJ,
         testLoginController.testarLogin();
     }
 }
