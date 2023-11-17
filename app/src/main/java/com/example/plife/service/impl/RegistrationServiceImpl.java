@@ -18,27 +18,32 @@ public class RegistrationServiceImpl implements RegistrationService {
         this.userService = userService;
     }
 
+    public RegistrationServiceImpl() {
+
+    }
+
+
     @Override
-    public String   cadastrarUsuario(Object user) {
+    public String cadastrarUsuario(Object user) {
         if (user instanceof CpfUser) {
             CpfUser cpfUser = (CpfUser) user;
             String validationResult = validarDocumento(cpfUser.getCPF());
-            if ("CPF válido".equals(validationResult)) {
+            if ("Documento válido".equals(validationResult)) {
 //                return userService.cadastrarUsuario(new User(cpfUser.getCPF(), cpfUser.getPassword(), cpfUser.getRole()));
                 return userService.cadastrarUsuario(cpfUser);
             } else {
                 System.out.println("CPF inválido: " + validationResult);
-                return "CPF inválido: " + validationResult;
+                return "Documento inválido: " + validationResult;
             }
         } else if (user instanceof CnpjUser) {
             CnpjUser cnpjUser = (CnpjUser) user;
             String validationResult = validarDocumento(cnpjUser.getCNPJ());
-            if ("CNPJ válido".equals(validationResult)) {
+            if ("Documento válido".equals(validationResult)) {
 //                return userService.cadastrarUsuario(new User(cnpjUser.getCNPJ(), cnpjUser.getPassword(), cnpjUser.getRole()));
                 return userService.cadastrarUsuario(cnpjUser);
             } else {
-                System.out.println("CNPJ inválido: " + validationResult);
-                return "CNPJ inválido: " + validationResult;
+                System.out.println("Documento inválido: " + validationResult);
+                return "Documento inválido: " + validationResult;
             }
         } else {
             return "Tipo de usuário não suportado";
@@ -61,13 +66,13 @@ public class RegistrationServiceImpl implements RegistrationService {
                 if (!calcularDigitosVerificadores(documento.substring(0, 9)).equals(documento.substring(9, 11))) {
                     return "CPF inválido, informe um CPF válido.";
                 }
-                return "CPF válido";
+                return "Documento válido";
             } else if (documento.length() == 14) {
                 // É um CNPJ
                 if (!calcularDigitosVerificadoresCNPJ(documento.substring(0, 12)).equals(documento.substring(12, 14))) {
                     return "CNPJ inválido, informe um CNPJ válido.";
                 }
-                return "CNPJ válido";
+                return "Documento válido";
             } else {
                 return "Documento inválido";
             }
@@ -98,12 +103,6 @@ public class RegistrationServiceImpl implements RegistrationService {
         segDig = (soma % 11 == 0 || soma % 11 == 1) ? 0 : 11 - (soma % 11);
 
         return primDig.toString() + segDig.toString();
-    }
-
-    private boolean isCPFPadrao(String cpf) {
-        List<String> cpfsPadrao = Arrays.asList("000.000.000-00", "111.111.111-11", "222.222.222-22");
-        String cpfSemPontos = cpf.replace(".", "").replace("-", "").trim();
-        return cpfsPadrao.contains(cpfSemPontos);
     }
 
     private String calcularDigitosVerificadoresCNPJ(String num) {

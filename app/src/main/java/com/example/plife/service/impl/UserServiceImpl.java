@@ -9,27 +9,64 @@ import com.example.plife.service.UserService;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService { // Classe Singleton
 
     private List<User> userList;
+    private static UserServiceImpl instance;
+
 
     public UserServiceImpl() {
         this.userList = new ArrayList<>();
     }
 
-    @Override
-    public String cadastrarUsuario(User user) {
-        // Verifica se o usuário já está cadastrado
-        if (userList.contains(user)) {
-            return "Usuário já cadastrado.";
+    public static synchronized UserServiceImpl getInstance() {
+        if (instance == null) {
+            instance = new UserServiceImpl();
         }
-
-        // Adiciona o usuário à lista
-        userList.add(user);
-        System.out.println("Cadastro bem-sucedido");
-        System.out.println("User List: " + userList);
-        return "Cadastro bem-sucedido";
+        return instance;
     }
+
+    @Override
+    public String cadastrarUsuario(Object user) {
+        if (user instanceof CpfUser) {
+            CpfUser cpfUser = (CpfUser) user;
+
+            // Verifica se o usuário já está cadastrado com base no CPF
+            boolean cpfUserExists = userList.stream()
+                    .filter(u -> u instanceof CpfUser)
+                    .map(u -> (CpfUser) u)
+                    .anyMatch(existingUser -> existingUser.getCPF().equals(cpfUser.getCPF()));
+
+            if (cpfUserExists) {
+                return "Usuário CPF já existe.";
+            }
+
+            // Adiciona o usuário à lista
+            userList.add(cpfUser);
+//            System.out.println("Cadastro bem-sucedido");
+//            System.out.println("User List: " + userList);
+            return "Cadastro bem-sucedido";
+        } else if (user instanceof CnpjUser) {
+            CnpjUser cnpjUser = (CnpjUser) user;
+
+            // Verifica se o usuário já está cadastrado com base no CNPJ
+            boolean cnpjUserExists = userList.stream()
+                    .filter(u -> u instanceof CnpjUser)
+                    .map(u -> (CnpjUser) u)
+                    .anyMatch(existingUser -> existingUser.getCNPJ().equals(cnpjUser.getCNPJ()));
+
+            if (cnpjUserExists) {
+                return "Usuário CNPJ já existe.";
+            }
+
+            // Adiciona o usuário à lista
+            userList.add(cnpjUser);
+            return "Cadastro bem-sucedido";
+        } else {
+            return "Tipo de usuário não suportado";
+        }
+    }
+
 
     @Override
     public String existeUsuario(CpfUser cpfUser, CnpjUser cnpjUser) {

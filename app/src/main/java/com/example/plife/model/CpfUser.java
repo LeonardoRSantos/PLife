@@ -11,12 +11,15 @@ public class CpfUser extends User {
 
     private String CPF;
 
-    public CpfUser(String cpf, String email, String password, Role role) {
-        super(email, password, role);
+    public CpfUser(String name, String phoneNumber, String email, String password, Role role, String cpf) {
+        super(name, phoneNumber, email, password, role);
         this.CPF = cpf;
     }
 
-
+    public CpfUser(String password, String cpf) {
+        super(password);
+        this.CPF = cpf;
+    }
 
 
     public String getCPF() {

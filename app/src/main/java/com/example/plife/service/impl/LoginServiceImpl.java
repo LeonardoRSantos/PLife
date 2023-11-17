@@ -20,7 +20,7 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public String fazerLogin(String login, String senha) {
         if (login.matches("\\d{11}")) { // Se o login é um CPF
-            CpfUser cpfUser = new CpfUser(login, null, senha, null);
+            CpfUser cpfUser = new CpfUser(login, senha);
             String validationResult = registrationService.validarDocumento(cpfUser.getCPF());
 
             if ("CPF válido".equals(validationResult)) {
@@ -35,7 +35,7 @@ public class LoginServiceImpl implements LoginService {
                 return "Login falhou. Verifique suas credenciais.";
             }
         } else if (login.matches("\\d{14}")) { // Se o login é um CNPJ
-            CnpjUser cnpjUser = new CnpjUser(login, null, senha, null);
+            CnpjUser cnpjUser = new CnpjUser(login, senha);
             String validationResult = registrationService.validarDocumento(cnpjUser.getCNPJ());
 
             if ("CNPJ válido".equals(validationResult)) {

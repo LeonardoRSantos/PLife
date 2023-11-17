@@ -16,11 +16,18 @@ public class User {
     private String phoneNumber;
     private Role role; // Adicione o atributo 'role' para definir o papel do usuário
 
-    public User(String email, String password, Role role) {
+    public User(String name, String phoneNumber, String email, String password, Role role) {
         this.email = email;
         this.password = password;
-        this.role = role; // Defina o papel ao criar o usuário
+        this.role = role;// Defina o papel ao criar o usuário
+        this.name = name;
+        this.phoneNumber = phoneNumber;
     }
+
+    public User(String password) {
+        this.password = password;
+    }
+
 
     // Métodos getters e setters para acessar e definir os atributos
 

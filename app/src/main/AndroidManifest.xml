@@ -19,9 +19,9 @@
         <activity
             android:name=".ui.cadastro.CadastroUserActivity"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".TelaUsuario"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".ui.menu.MenuUsuarioActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
