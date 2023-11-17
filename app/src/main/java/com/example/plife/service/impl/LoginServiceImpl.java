@@ -19,30 +19,30 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public String fazerLogin(String login, String senha) {
-        if (login.matches("\\d{11}")) { // Se o login é um CPF
-            CpfUser cpfUser = new CpfUser(login, senha);
-            String validationResult = registrationService.validarDocumento(cpfUser.getCPF());
+        if (login.length() == 14) { // Se o login é um CPF
+            CpfUser cpfUser = new CpfUser(login, senha, Role.ROLE_USER);
+            String validationResult = registrationService.validarDocumento(login);
 
-            if ("CPF válido".equals(validationResult)) {
-                String existeUsuarioResult = userService.existeUsuario(cpfUser, null);
+            if ("Documento válido".equals(validationResult)) {
+                String existeUsuarioResult = userService.existeUsuario(login);
 
                 if ("Usuário CPF existe".equals(existeUsuarioResult) && senha.equals(cpfUser.getPassword())) {
-                    return "Login bem-sucedido. Usuário: " + cpfUser.getCPF() + ", Perfil: " + Role.ROLE_USER;
+                    return "Login bem-sucedido";
                 } else {
                     return "Login falhou. Usuário CPF não cadastrado ou senha incorreta.";
                 }
             } else {
                 return "Login falhou. Verifique suas credenciais.";
             }
-        } else if (login.matches("\\d{14}")) { // Se o login é um CNPJ
-            CnpjUser cnpjUser = new CnpjUser(login, senha);
-            String validationResult = registrationService.validarDocumento(cnpjUser.getCNPJ());
+        } else if (login.length() == 18) { // Se o login é um CNPJ
+            CnpjUser cnpjUser = new CnpjUser(login, senha, Role.ROLE_COMPANY);
+            String validationResult = registrationService.validarDocumento(login);
 
-            if ("CNPJ válido".equals(validationResult)) {
-                String existeUsuarioResult = userService.existeUsuario(null, cnpjUser);
+            if ("Documento válido".equals(validationResult)) {
+                String existeUsuarioResult = userService.existeUsuario(login);
 
                 if ("Usuário CNPJ existe".equals(existeUsuarioResult) && senha.equals(cnpjUser.getPassword())) {
-                    return "Login bem-sucedido. Usuário: " + cnpjUser.getCNPJ() + ", Perfil: " + Role.ROLE_COMPANY;
+                    return "Login bem-sucedido";
                 } else {
                     return "Login falhou. Usuário CNPJ não cadastrado ou senha incorreta.";
                 }

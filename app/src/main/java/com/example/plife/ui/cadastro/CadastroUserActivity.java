@@ -39,12 +39,12 @@ public class CadastroUserActivity extends AppCompatActivity {
         String cpf = getIntent().getStringExtra("cpf");
 
         // Configurar EditText com a máscara de CPF e torná-lo não editável
-        EditText cpfEditText = findViewById(R.id.cpf);
+        EditText cpfEditText = findViewById(R.id.cpfCnpjCadastro);
 
         // Adicionar o texto "CPF:" ao número formatado
         String textoFormatado = "CPF:" + MaskUtil.unmask(cpf); // Remover a máscara para evitar interferências
         cpfEditText.setText(textoFormatado);
-        cpfEditText.setEnabled(false);
+        cpfEditText.setEnabled(true);
 
         // Configurar o botão de cadastro
         Button btnCadastrar = findViewById(R.id.btnCadastrar);
@@ -52,7 +52,7 @@ public class CadastroUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Recuperar os dados do usuário dos campos de entrada
-                String cpf = MaskUtil.unmask(((EditText) findViewById(R.id.cpf)).getText().toString());
+                String cpf = MaskUtil.unmask(((EditText) findViewById(R.id.cpfCnpjCadastro)).getText().toString());
                 String email = ((EditText) findViewById(R.id.email)).getText().toString();
                 String nome = ((EditText) findViewById(R.id.nome)).getText().toString();
                 String telefone = ((EditText) findViewById(R.id.phone)).getText().toString();

@@ -24,8 +24,13 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public User(String password) {
+    public User(String password, Role role) {
         this.password = password;
+        this.role = role;
+    }
+
+    public User() {
+
     }
 
 

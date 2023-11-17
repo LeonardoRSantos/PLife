@@ -44,7 +44,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/cpf"
+                android:id="@+id/cpfCnpjCadastro"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:fontFamily="@font/prompt_semibold"

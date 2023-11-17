@@ -9,5 +9,7 @@ import java.util.List;
 public interface UserService {
       String cadastrarUsuario(Object user);
 
-    String existeUsuario(CpfUser cpfUser, CnpjUser cnpjUser);
+//    String existeUsuario(CpfUser cpfUser, CnpjUser cnpjUser);
+    // Voltar se não der certo.
+    String existeUsuario(String login);
 }

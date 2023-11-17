@@ -69,23 +69,21 @@ public class UserServiceImpl implements UserService { // Classe Singleton
 
 
     @Override
-    public String existeUsuario(CpfUser cpfUser, CnpjUser cnpjUser) {
-        // Adicione um log para verificar o estado da userList
-        System.out.println("User List: " + userList.toString());
+    public String existeUsuario(String login) {
+        String documento = login.replace(".", "").replace("-", "").replace("/", "").trim();
 
-        // Verifique se o usuário existe com base no CPF ou CNPJ
-        if (cpfUser != null) {
+        if (documento.length() == 11) {
             boolean cpfUserExists = userList.stream()
                     .filter(u -> u instanceof CpfUser)
                     .map(u -> (CpfUser) u)
-                    .anyMatch(existingUser -> existingUser.getCPF().equals(cpfUser.getCPF()));
+                    .anyMatch(existingUser -> existingUser.getCPF().equals(documento));
 
             return cpfUserExists ? "Usuário CPF existe" : "Usuário CPF não existe";
-        } else if (cnpjUser != null) {
+        } else if (documento.length() == 14) {
             boolean cnpjUserExists = userList.stream()
                     .filter(u -> u instanceof CnpjUser)
                     .map(u -> (CnpjUser) u)
-                    .anyMatch(existingUser -> existingUser.getCNPJ().equals(cnpjUser.getCNPJ()));
+                    .anyMatch(existingUser -> existingUser.getCNPJ().equals(documento));
 
             return cnpjUserExists ? "Usuário CNPJ existe" : "Usuário CNPJ não existe";
         }

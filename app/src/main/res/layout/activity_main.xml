@@ -130,6 +130,7 @@
             app:boxBackgroundMode="none">
 
             <EditText
+                android:id="@+id/cpfCnpjLogin"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:drawableEnd="@drawable/ic_email_white_24dp"
@@ -153,7 +154,7 @@
 
 
             <EditText
-
+                android:id="@+id/passwordLogin"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:drawableEnd="@drawable/ic_lock_white_24dp"
