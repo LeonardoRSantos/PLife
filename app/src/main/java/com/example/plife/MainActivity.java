@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.plife.controller.LoginController;
+import com.example.plife.model.CnpjUser;
 import com.example.plife.model.CpfUser;
 import com.example.plife.model.enums.Role;
 import com.example.plife.service.LoginService;
@@ -19,6 +20,7 @@ import com.example.plife.service.impl.RegistrationServiceImpl;
 import com.example.plife.service.impl.UserServiceImpl;
 import com.example.plife.ui.cadastro.CadastroActivity;
 import com.example.plife.ui.cadastro.util.MaskUtil;
+import com.example.plife.ui.menu.MenuCompanyActivity;
 import com.example.plife.ui.menu.MenuUsuarioActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -50,19 +52,37 @@ public class MainActivity extends AppCompatActivity {
                 String cpfCnpj = ((EditText) findViewById(R.id.cpfCnpjLogin)).getText().toString();
                 String senha = ((EditText) findViewById(R.id.passwordLogin)).getText().toString();
 
-                CpfUser cpfUser = new CpfUser(cpfCnpj, senha, Role.ROLE_USER);
+                if(cpfCnpj.length() == 14){
+                    CpfUser cpfUser = new CpfUser(cpfCnpj, senha, Role.ROLE_USER);
 
-                LoginController loginController = new LoginController(loginService);
-                String resultadoLogin = loginController.LoginUsuario(cpfUser, null);
+                    LoginController loginController = new LoginController(loginService);
+                    String resultadoLogin = loginController.LoginUsuario(cpfUser, null);
 
-                // Trate o resultado do login conforme necessário
-                if ("Login bem-sucedido".equals(resultadoLogin)) {
-                    // Login bem-sucedido, vá para a próxima tela
-                    Intent intent = new Intent(MainActivity.this, MenuUsuarioActivity.class);
-                    startActivity(intent);
-                }else {
-                    Toast.makeText(MainActivity.this, resultadoLogin, Toast.LENGTH_LONG).show();
+                    // Trate o resultado do login conforme necessário
+                    if ("Login bem-sucedido".equals(resultadoLogin)) {
+                        // Login bem-sucedido, vá para a próxima tela
+                        Intent intent = new Intent(MainActivity.this, MenuUsuarioActivity.class);
+                        startActivity(intent);
+                    }else {
+                        Toast.makeText(MainActivity.this, resultadoLogin, Toast.LENGTH_LONG).show();
+                    }
+                }else if(cpfCnpj.length() == 18){
+                    CnpjUser cnpjUser = new CnpjUser(cpfCnpj, senha, Role.ROLE_COMPANY);
+
+                    LoginController loginController = new LoginController(loginService);
+                    String resultadoLogin = loginController.LoginUsuario(null, cnpjUser);
+
+                    // Trate o resultado do login conforme necessário
+                    if ("Login bem-sucedido".equals(resultadoLogin)) {
+                        // Login bem-sucedido, vá para a próxima tela
+                        Intent intent = new Intent(MainActivity.this, MenuCompanyActivity.class);
+                        startActivity(intent);
+                    }else {
+                        Toast.makeText(MainActivity.this, resultadoLogin, Toast.LENGTH_LONG).show();
+                    }
                 }
+
+
             }
         });
         // Adicione um ouvinte de clique ao botão Registrar

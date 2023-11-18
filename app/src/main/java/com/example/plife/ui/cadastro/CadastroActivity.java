@@ -38,20 +38,28 @@ public class CadastroActivity extends AppCompatActivity {
         btnContinuar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                login.replace(".", "").replace("-", "").replace("/", "").trim();
+
                 // Obtenha o valor do CPF/CNPJ digitado
-                String documento = cpfCnpjEditText.getText().toString().replaceAll("[^0-9]", "");
+//                String documento = cpfCnpjEditText.getText().toString().replaceAll("[^0-9]", "");
+                String documento = cpfCnpjEditText.getText().toString().replace(".", "").replace("-", "").replace("/", "").trim();
 
                 Log.d("CadastroActivity", "Botão Continuar clicado");
 
                 // Verifique se o documento é um CPF ou CNPJ chamando o método do CadastroController
                 String validationResult = cadastroController.validarDocumento(documento); // Substitua ROLE_USER pelo papel correto
 
-                if ("Documento válido".equals(validationResult) || "Documento válido".equals(validationResult)) {
+                if ("Documento válido".equals(validationResult) && documento.length() == 11) {
                     // A validação foi bem-sucedida, continue para a próxima tela
                     Intent intent = new Intent(CadastroActivity.this, CadastroUserActivity.class);
                     intent.putExtra("cpf", documento);
                     startActivity(intent);
-                }  else {
+                }else if("Documento válido".equals(validationResult) && documento.length() == 14){
+                    // A validação foi bem-sucedida, continue para a próxima tela
+                    Intent intent = new Intent(CadastroActivity.this, CadastroCompanyActivity.class);
+                    intent.putExtra("cnpj", documento);
+                    startActivity(intent);
+                }else {
                     // A validação falhou, exiba a mensagem de erro
                     Toast.makeText(CadastroActivity.this, validationResult, Toast.LENGTH_LONG).show();
 //                    Log.d("CadastroActivity", "Erro: " + validationResult);

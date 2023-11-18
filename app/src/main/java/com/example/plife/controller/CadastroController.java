@@ -16,11 +16,11 @@ public class CadastroController {
 
 
     public String cadastrarUsuario(CpfUser cpfUser, CnpjUser cnpjUser){
-        if (cpfUser.getRole() == Role.ROLE_USER){
+        if (cpfUser != null && cpfUser.getRole() == Role.ROLE_USER){
             return registrationService.cadastrarUsuario(cpfUser);
-        }else if(cnpjUser.getRole() == Role.ROLE_COMPANY){
+        } else if(cnpjUser != null && cnpjUser.getRole() == Role.ROLE_COMPANY){
             return registrationService.cadastrarUsuario(cnpjUser);
-        }else {
+        } else {
             return "Tipo de usuário não suportado";
         }
     }

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B2EA6E"
+    android:orientation="vertical"
+    tools:context=".ui.cadastro.CadastroCompanyActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="?attr/colorPrimary"
+        android:backgroundTint="#409743"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="2dp">
+
+
+        <ImageView
+            android:id="@+id/imageBack"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="80dp"
+            android:src="@drawable/baseline_arrow_back_ios_24" />
+
+
+        <TextView
+            android:layout_width="289dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/prompt"
+            android:text="Primeiro Acesso"
+            android:textSize="23sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/cpfCnpjCompany"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:text="CNPJ:00.000.000/0000-00"
+            android:textSize="15sp"
+            android:inputType="none"
+            android:cursorVisible="false"
+            android:background="@null"
+            android:focusable="false"
+            android:clickable="false"/>
+
+        <EditText
+            android:id="@+id/emailCompany"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableEnd="@drawable/ic_email_white_24dp"
+            android:drawablePadding="16dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:hint="E-mail:"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:textColor="@color/VerdeBarra"
+            android:textSize="16sp" />
+
+
+        <EditText
+            android:id="@+id/razaoSocial"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:drawableEnd="@drawable/ic_email_white_24dp"
+            android:drawablePadding="16dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:hint="Razão Social:"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:textColor="@color/VerdeBarra"
+            android:textSize="16sp" />
+
+
+        <EditText
+            android:id="@+id/nomeFantasia"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:hint="Nome Fantasia: "
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:ems="14"
+            android:fontFamily="@font/prompt_semibold"
+            android:hint="Telefone:"
+            android:inputType="phone"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DDD + Número"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:drawableEnd="@drawable/ic_lock_white_24dp"
+            android:drawablePadding="16dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:hint="Senha"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="@color/VerdeBarra"
+            android:textSize="16sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:drawableEnd="@drawable/ic_lock_white_24dp"
+            android:drawablePadding="16dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:hint="Confirmar Senha"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="@color/VerdeBarra"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCadastrarCompany"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:background="@drawable/back_ground_button"
+            android:drawableRight="@drawable/ic_arrow"
+            android:fontFamily="@font/prompt_semibold"
+            android:padding="15dp"
+            android:text="Cadastrar"
+            android:textColor="@color/TextoBotões"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>

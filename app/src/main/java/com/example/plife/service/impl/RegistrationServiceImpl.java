@@ -29,7 +29,6 @@ public class RegistrationServiceImpl implements RegistrationService {
             CpfUser cpfUser = (CpfUser) user;
             String validationResult = validarDocumento(cpfUser.getCPF());
             if ("Documento válido".equals(validationResult)) {
-//                return userService.cadastrarUsuario(new User(cpfUser.getCPF(), cpfUser.getPassword(), cpfUser.getRole()));
                 return userService.cadastrarUsuario(cpfUser);
             } else {
                 System.out.println("CPF inválido: " + validationResult);
@@ -39,7 +38,6 @@ public class RegistrationServiceImpl implements RegistrationService {
             CnpjUser cnpjUser = (CnpjUser) user;
             String validationResult = validarDocumento(cnpjUser.getCNPJ());
             if ("Documento válido".equals(validationResult)) {
-//                return userService.cadastrarUsuario(new User(cnpjUser.getCNPJ(), cnpjUser.getPassword(), cnpjUser.getRole()));
                 return userService.cadastrarUsuario(cnpjUser);
             } else {
                 System.out.println("Documento inválido: " + validationResult);

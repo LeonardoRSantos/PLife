@@ -15,9 +15,9 @@ public class LoginController {
     }
 
     public String LoginUsuario(CpfUser cpfUser, CnpjUser cnpjUser){
-        if (cpfUser.getRole() == Role.ROLE_USER){
+        if (cpfUser != null && cpfUser.getRole() == Role.ROLE_USER){
             return loginService.fazerLogin(cpfUser.getCPF(), cpfUser.getPassword());
-        }else if(cnpjUser.getRole() == Role.ROLE_COMPANY){
+        }else if(cnpjUser != null && cnpjUser.getRole() == Role.ROLE_COMPANY){
             return loginService.fazerLogin(cnpjUser.getCNPJ(), cnpjUser.getPassword());
         }else {
             return "Login ou senha inválidos.";
