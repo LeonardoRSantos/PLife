@@ -32,7 +32,7 @@ public class CadastroCompanyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_company);
 
-        userService = UserServiceImpl.getInstance();
+        userService = UserServiceImpl.getInstance(getApplicationContext());
         registrationService = new RegistrationServiceImpl(userService);
 
         String cnpj = getIntent().getStringExtra("cnpj");

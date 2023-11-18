@@ -33,7 +33,7 @@ public class CadastroUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_continuacao_cadastro);
 
-        userService = UserServiceImpl.getInstance();
+        userService = UserServiceImpl.getInstance(getApplicationContext());
         registrationService = new RegistrationServiceImpl(userService);
 
         String cpf = getIntent().getStringExtra("cpf");

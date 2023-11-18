@@ -2,8 +2,6 @@ package com.example.plife.service.impl;
 
 import com.example.plife.model.CpfUser;
 import com.example.plife.model.CnpjUser;
-import com.example.plife.model.User;
-import com.example.plife.model.enums.Role;
 import com.example.plife.service.RegistrationService;
 import com.example.plife.service.UserService;
 

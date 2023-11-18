@@ -4,7 +4,6 @@ package com.example.plife.model;
 
 import com.example.plife.model.enums.Role;
 
-import java.util.Date;
 import java.util.Objects;
 
 public class CpfUser extends User {
