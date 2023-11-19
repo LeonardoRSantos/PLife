@@ -5,8 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#B2EA6E"
-    tools:context=".ui.cadastro.CadastroActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.cadastro.CadastroActivity">
+
 
 
     <LinearLayout
@@ -16,6 +18,7 @@
         android:backgroundTint="#409743"
         android:orientation="horizontal"
         tools:layout_editor_absoluteY="2dp">
+
 
         <ImageView
             android:id="@+id/imageBack"
@@ -78,16 +81,16 @@
         android:orientation="vertical">
 
         <EditText
-        android:id="@+id/cpfCnpj"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:drawableRight="@drawable/ic_cpf_cnpj"
-        android:fontFamily="@font/prompt"
-        android:hint="CPF/CNPJ"
-        android:textSize="15sp"
-        />
+            android:id="@+id/cpfCnpj"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:drawableRight="@drawable/ic_cpf_cnpj"
+            android:fontFamily="@font/prompt"
+            android:textColor="@color/VerdeBarra"
+            android:hint="CPF/CNPJ"
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/btnContinuar"
@@ -104,7 +107,6 @@
             android:textSize="16sp"
             android:textStyle="bold" />
     </LinearLayout>
-
 
 
 </LinearLayout>

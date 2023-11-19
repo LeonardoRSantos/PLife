@@ -6,12 +6,13 @@
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
     android:background="#B2EA6E"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
 
     <ImageView
         android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_height="250dp"
         android:src="@drawable/logolife"
         android:layout_marginTop="200dp"
         android:layout_alignParentTop="true"
@@ -22,7 +23,7 @@
     <LinearLayout
         android:id="@+id/title"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
@@ -30,14 +31,6 @@
 
 
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Plife"
-            android:textSize="40sp"
-            android:textColor="#D01C3A1D"/>
     </LinearLayout>
 
     <LinearLayout

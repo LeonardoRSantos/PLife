@@ -43,19 +43,19 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+
             <EditText
                 android:id="@+id/cpfCnpjCadastro"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:fontFamily="@font/prompt_semibold"
-                android:text="CPF:000.000.000-00"
-                android:textSize="15sp"
-                android:inputType="none"
-                android:cursorVisible="false"
                 android:background="@null"
+                android:clickable="false"
+                android:cursorVisible="false"
                 android:focusable="false"
-                android:clickable="false"/>
-
+                android:fontFamily="@font/prompt_semibold"
+                android:inputType="none"
+                android:text="CPF:000.000.000-00"
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/email"
@@ -83,8 +83,10 @@
                 android:id="@+id/nome"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:drawableEnd="@drawable/baseline_drive_file_rename_outline_24"
                 android:fontFamily="@font/prompt_semibold"
                 android:hint="Nome: "
+                android:textColor="@color/VerdeBarra"
                 android:textSize="15sp" />
 
             <TextView
@@ -100,8 +102,10 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="30dp"
                 android:ems="14"
+                android:drawableEnd="@drawable/ic_phone"
                 android:fontFamily="@font/prompt_semibold"
                 android:hint="Telefone:"
+                android:textColor="@color/VerdeBarra"
                 android:inputType="phone"
                 android:textSize="16sp" />
 
