@@ -28,6 +28,8 @@ public class CadastroUserActivity extends AppCompatActivity {
 
     private UserServiceImpl userService;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

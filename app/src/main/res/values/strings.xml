@@ -19,14 +19,3 @@
     <string name="americano">Americano - 5,49</string>
     <string name="calcular">Calcular</string>
 </resources>
-
-<resources>
-
-<string-array name="Tarefas">
-
-    <item> Plantar uma árvore </item>
-    <item> Reclicar Latas </item>
-    <item> Economizar Água </item>
-
-</string-array>
-</resources>
