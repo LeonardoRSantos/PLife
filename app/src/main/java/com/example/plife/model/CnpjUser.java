@@ -18,7 +18,7 @@ public class CnpjUser  extends User {
     public CnpjUser(String nameFantasia, String phoneNumber, String email, String password, Role role, String razaoSocial, String cnpj) {
         super(nameFantasia, phoneNumber, email, password, role);
         this.CNPJ = cnpj;
-        this.nomeFantasia = nomeFantasia;
+//        this.nomeFantasia = nomeFantasia;
         this.razaoSocial = razaoSocial;
     }
 
