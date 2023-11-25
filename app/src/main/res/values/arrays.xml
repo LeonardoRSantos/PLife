@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+   <string-array name="Tarefas">
+        <item></item>
+       <item> Plantar uma árvore </item>
+       <item> Reclicar Latas </item>
+       <item> Economizar Água </item>
+    </string-array>
+</resources>
+
+
+
+
+
+

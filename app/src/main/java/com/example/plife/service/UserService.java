@@ -12,4 +12,6 @@ public interface UserService {
 //    String existeUsuario(CpfUser cpfUser, CnpjUser cnpjUser);
     // Voltar se não der certo.
     String existeUsuario(String login);
+
+    List<User> getUserAdminList();
 }
