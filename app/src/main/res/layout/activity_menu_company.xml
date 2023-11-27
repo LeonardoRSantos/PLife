@@ -13,6 +13,7 @@
         android:layout_height="40dp"
         android:background="?attr/colorPrimary"
         android:backgroundTint="#409743"
+        android:fitsSystemWindows="true"
         android:orientation="horizontal"
         tools:layout_editor_absoluteY="2dp">
 
@@ -33,22 +34,15 @@
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
-                android:layout_height="15dp"
+                android:layout_height="wrap_content"
                 android:background="?attr/colorPrimary"
                 android:backgroundTint="#409743"
+                android:textAllCaps="false"
                 android:fontFamily="@font/prompt_semibold"
                 android:text="Company"
-                android:textSize="13sp" />
+                android:textSize="18sp"/>
 
-<!--            <TextView-->
-<!--                android:id="@+id/textView45"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="?attr/colorPrimary"-->
-<!--                android:backgroundTint="#409743"-->
-<!--                android:fontFamily="@font/prompt_semibold"-->
-<!--                android:text="Pontos:00,00"-->
-<!--                android:textSize="13sp" />-->
+
         </LinearLayout>
 
 
@@ -56,7 +50,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="687dp"
         android:layout_marginVertical="2dp"
         android:layout_marginTop="80dp"
         android:gravity="center_vertical"
@@ -72,7 +66,7 @@
             app:srcCompat="@drawable/logolife" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/ButtonCarteira"
+            android:id="@+id/btnCadastrarTarefasCompany"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
@@ -80,7 +74,7 @@
             android:drawableRight="@drawable/ic_arrow"
             android:fontFamily="@font/prompt"
             android:padding="15dp"
-            android:text="Carteira"
+            android:text="Cadastrar"
             android:textColor="@color/TextoBotões"
             android:textSize="16sp" />
 
@@ -98,7 +92,7 @@
             android:textSize="16sp" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/ButtonLoja"
+            android:id="@+id/ButtonRecompensas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
@@ -106,7 +100,7 @@
             android:drawableRight="@drawable/ic_arrow"
             android:fontFamily="@font/prompt"
             android:padding="15dp"
-            android:text="Loja"
+            android:text="Recompensas"
             android:textColor="@color/TextoBotões"
             android:textSize="16sp" />
 

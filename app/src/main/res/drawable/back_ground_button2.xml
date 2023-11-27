@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"> <!--Tipo de Shape-->
+
+    <corners android:radius="22dp"/> <!--Arredondamento do Botão-->
+    <size android:height="8dp"/>
+    <size android:width="22dp"/>
+
+    <solid android:color="@color/BrancoBotão"/>
+
+
+
+
+</shape>

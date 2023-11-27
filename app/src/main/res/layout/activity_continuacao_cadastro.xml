@@ -43,19 +43,19 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+
             <EditText
                 android:id="@+id/cpfCnpjCadastro"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:fontFamily="@font/prompt_semibold"
-                android:text="CPF:000.000.000-00"
-                android:textSize="15sp"
-                android:inputType="none"
-                android:cursorVisible="false"
                 android:background="@null"
+                android:clickable="false"
+                android:cursorVisible="false"
                 android:focusable="false"
-                android:clickable="false"/>
-
+                android:fontFamily="@font/prompt_semibold"
+                android:inputType="none"
+                android:text="CPF:000.000.000-00"
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/email"
@@ -83,8 +83,11 @@
                 android:id="@+id/nome"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:drawableEnd="@drawable/baseline_drive_file_rename_outline_24"
                 android:fontFamily="@font/prompt_semibold"
                 android:hint="Nome: "
+                android:inputType="textEmailAddress"
+                android:textColor="@color/VerdeBarra"
                 android:textSize="15sp" />
 
             <TextView
@@ -100,8 +103,10 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="30dp"
                 android:ems="14"
+                android:drawableEnd="@drawable/ic_phone"
                 android:fontFamily="@font/prompt_semibold"
                 android:hint="Telefone:"
+                android:textColor="@color/VerdeBarra"
                 android:inputType="phone"
                 android:textSize="16sp" />
 
@@ -112,32 +117,70 @@
                 android:text="DDD + Número"
                 android:textSize="13sp" />
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/password"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="30dp"
-                android:drawableEnd="@drawable/ic_lock_white_24dp"
-                android:drawablePadding="16dp"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/prompt_semibold"
-                android:hint="Senha"
+                android:hint="Senha:"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:textColor="@color/VerdeBarra"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                app:passwordToggleDrawable="@drawable/ic_open"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#254525"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Small">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="30dp"
-                android:drawableEnd="@drawable/ic_lock_white_24dp"
-                android:drawablePadding="16dp"
+
+                <com.google.android.material.textfield.TextInputEditText
+                 android:layout_width="match_parent"
+                 android:layout_height="60dp"
+                 android:imeOptions="actionDone"
+                 android:inputType="textPassword"
+                 android:backgroundTint="#B2EA6E"
+                    android:textColor="@color/VerdeBarra"
+                android:textColorHint="@android:color/transparent"
+                android:textSize="16sp"
                 android:fontFamily="@font/prompt_semibold"
-                android:hint="Confirmar Senha"
+                android:ems="10" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_semibold"
+                android:hint="Confirmar Senha:"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:textColor="@color/VerdeBarra"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                app:passwordToggleDrawable="@drawable/ic_open"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#254525"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Small">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:hint="Confirmar Senha"
+                    android:backgroundTint="#B2EA6E"
+                    android:textColor="@color/VerdeBarra"
+                    android:textColorHint="@android:color/transparent"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/prompt_semibold"
+                    android:ems="10" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnCadastrar"
@@ -151,5 +194,8 @@
                 android:text="Cadastrar"
                 android:textColor="@color/TextoBotões"
                 android:textSize="16sp" />
+
+
+
         </LinearLayout>
 </LinearLayout>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B2EA6E"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:backgroundTint="#409743"
+        android:fitsSystemWindows="true"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="2dp">
+
+        <ImageView
+            android:id="@+id/Voltar"
+            android:layout_width="30dp"
+            android:layout_height="39dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/baseline_arrow_back_ios_24" />
+
+
+
+
+        <ImageView
+            android:id="@+id/imageBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/user" />
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimary"
+                android:backgroundTint="#409743"
+                android:fontFamily="@font/prompt_semibold"
+                android:text="Company"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:gravity="center"
+            android:text="Recomepensas"
+            android:textAllCaps="false"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Insira a imagem do produto:"
+            android:textSize="18sp"
+            android:layout_marginBottom="100dp"
+            android:fontFamily="@font/prompt_semibold"/>
+
+
+
+
+
+        <EditText
+            android:id="@+id/Descrição"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/prompt_semibold"
+            android:text="Descrição: "
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/Valor1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:text="Valor: 00,00. "
+            android:textSize="18sp" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ButtonPrimeiroAdicionar"
+            android:layout_width="324dp"
+            android:layout_height="48dp"
+            android:layout_margin="32dp"
+            android:background="@drawable/back_ground_button2"
+            android:drawableRight="@drawable/ic_arrow"
+            android:fontFamily="@font/prompt"
+            android:padding="15dp"
+            android:text="Adicionar"
+            android:textColor="@color/TextoBotões"
+            android:textSize="16sp" />
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

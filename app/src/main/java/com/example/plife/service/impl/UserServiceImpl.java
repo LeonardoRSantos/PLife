@@ -20,11 +20,10 @@ import java.util.ArrayList;
 public class UserServiceImpl implements UserService {
 
     private static UserServiceImpl instance;
-    private List<User> userList;
+    private List<User> userAdminList;
     private List<CpfUser> userCpfList;
     private List<CnpjUser> userCnpjList;
-    private static final String USER_LIST_KEY = "userList";
-//    private static final Type USER_LIST_TYPE = new TypeToken<List<User>>() {}.getType();
+    private static final Type USER_ADMIN_LIST_TYPE = new TypeToken<List<User>>() {}.getType();
     private static final Type USER_CPF_LIST_TYPE = new TypeToken<List<CpfUser>>() {}.getType();
     private static final Type USER_CNPJ_LIST_TYPE = new TypeToken<List<CnpjUser>>() {}.getType();
     private SharedPreferences sharedPreferences;
@@ -32,7 +31,7 @@ public class UserServiceImpl implements UserService {
 
 
     private UserServiceImpl(Context context) {
-        this.userList = new ArrayList<>();
+        this.userAdminList = new ArrayList<>();
         this.userCpfList = new ArrayList<>();
         this.userCnpjList = new ArrayList<>();
         this.sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
@@ -86,7 +85,26 @@ public class UserServiceImpl implements UserService {
 
             saveUserList(); // Salva a lista de usuários no SharedPreferences
             return "Cadastro bem-sucedido";
-        } else {
+        }else if (user instanceof User) {
+            User adminUser = (User) user;
+
+            // Verifica se o usuário admin já está cadastrado com base no nome de usuário
+            boolean adminUserExists = userAdminList.stream()
+                    .filter(u -> u instanceof User)
+                    .map(u -> (User) u)
+                    .anyMatch(existingUser -> existingUser.getName().equals(adminUser.getName()));
+
+            if (adminUserExists) {
+                return "Usuário admin já existe.";
+            }
+
+            // Adiciona o usuário admin à lista
+            userAdminList.add(adminUser);
+            saveUserList(); // Salva a lista de usuários no SharedPreferences
+            return "Cadastro bem-sucedido";
+        }
+
+        else {
             return "Tipo de usuário não suportado";
         }
     }
@@ -113,21 +131,33 @@ public class UserServiceImpl implements UserService {
         return "Parâmetros inválidos";
     }
 
-    public List<User> getUserList() {
-        return userList;
+    @Override
+    public List<User> getUsersAdminList() {
+        return userAdminList;
+    }
+    @Override
+    public List<CpfUser> getUsersCpf() {
+        return userCpfList;
     }
 
     private void loadUserList() {
+        String userAdminListJson = sharedPreferences.getString("userAdminList", null);
         String userCpfListJson = sharedPreferences.getString("userCpfList", null);
         String userCnpjListJson = sharedPreferences.getString("userCnpjList", null);
-            if (userCpfListJson != null) {
-                userCpfList = gson.fromJson(userCpfListJson, USER_CPF_LIST_TYPE);
-            }else if(userCnpjListJson != null){
-                userCnpjList = gson.fromJson(userCnpjListJson, USER_CNPJ_LIST_TYPE);
 
+        if (userAdminListJson != null) {
+            userAdminList = gson.fromJson(userAdminListJson, USER_ADMIN_LIST_TYPE);
         }
 
+        if (userCpfListJson != null) {
+            userCpfList = gson.fromJson(userCpfListJson, USER_CPF_LIST_TYPE);
+        }
+
+        if (userCnpjListJson != null) {
+            userCnpjList = gson.fromJson(userCnpjListJson, USER_CNPJ_LIST_TYPE);
+        }
     }
+
 
 
 
@@ -135,12 +165,15 @@ public class UserServiceImpl implements UserService {
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         // Convertendo as listas específicas para JSON
+        String userAdminListJson = gson.toJson(userAdminList, USER_ADMIN_LIST_TYPE);
         String userCpfListJson = gson.toJson(userCpfList, USER_CPF_LIST_TYPE);
         String userCnpjListJson = gson.toJson(userCnpjList, USER_CNPJ_LIST_TYPE);
 
         // Salvando as listas específicas no SharedPreferences
+        editor.putString("userAdminList", userAdminListJson);
         editor.putString("userCpfList", userCpfListJson);
         editor.putString("userCnpjList", userCnpjListJson);
         editor.apply();
     }
+
 }

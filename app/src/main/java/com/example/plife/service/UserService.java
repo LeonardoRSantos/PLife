@@ -1,6 +1,5 @@
 package com.example.plife.service;
 
-import com.example.plife.model.CnpjUser;
 import com.example.plife.model.CpfUser;
 import com.example.plife.model.User;
 
@@ -12,4 +11,8 @@ public interface UserService {
 //    String existeUsuario(CpfUser cpfUser, CnpjUser cnpjUser);
     // Voltar se não der certo.
     String existeUsuario(String login);
+
+    List<User> getUsersAdminList();
+
+    List<CpfUser> getUsersCpf();
 }

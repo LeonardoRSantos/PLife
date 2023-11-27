@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#B2EA6E"
-    tools:context=".ui.menu.MenuUsuarioActivity"
     android:orientation="vertical">
 
     <LinearLayout
@@ -35,13 +34,13 @@
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
-                android:layout_height="17dp"
+                android:layout_height="15dp"
                 android:background="?attr/colorPrimary"
                 android:backgroundTint="#409743"
                 android:textAllCaps="false"
                 android:fontFamily="@font/prompt_semibold"
                 android:text="Usuario"
-                android:textSize="14sp"/>
+                android:textSize="13sp"/>
 
             <TextView
                 android:id="@+id/textView45"
@@ -51,7 +50,7 @@
                 android:backgroundTint="#409743"
                 android:fontFamily="@font/prompt_semibold"
                 android:text="Pontos:00,00"
-                android:textSize="14sp" />
+                android:textSize="13sp" />
         </LinearLayout>
 
 
@@ -59,60 +58,113 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="687dp"
-        android:layout_marginVertical="2dp"
-        android:layout_marginTop="80dp"
+        android:layout_height="730dp"
+        android:layout_marginVertical="1dp"
+
         android:gravity="center_vertical"
         android:orientation="vertical">
 
-
-        <ImageView
-            android:id="@+id/LogoPlife"
-            android:layout_width="wrap_content"
-            android:layout_height="197dp"
-            android:layout_marginTop="13dp"
-            android:fontFamily="@font/prompt"
-            app:srcCompat="@drawable/logolife" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/ButtonTarefas"
+        <TextView
+            android:id="@+id/Objetivo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:text="Tarefa: "
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Objetivo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:text="Objetivo: "
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Pontos1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:text="Recompensa: 00,00 Pontos. "
+            android:textSize="17sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ButtonPrimeiraTarefa"
+            android:layout_width="324dp"
+            android:layout_height="48dp"
             android:layout_margin="32dp"
-            android:background="@drawable/back_ground_button"
+            android:background="@drawable/back_ground_button2"
             android:drawableRight="@drawable/ic_arrow"
             android:fontFamily="@font/prompt"
             android:padding="15dp"
-            android:text="Tarefas"
+            android:text="Aceitar Tarefa"
             android:textColor="@color/TextoBotões"
             android:textSize="16sp" />
 
 
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/ButtonLoja"
+        <TextView
+            android:id="@+id/Objetivo2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:text="Objetivo: "
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Pontos2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:text="Recompensa: 00,00 Pontos. "
+            android:textSize="17sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ButtonSegundaTarefa"
+            android:layout_width="324dp"
+            android:layout_height="48dp"
             android:layout_margin="32dp"
-            android:background="@drawable/back_ground_button"
+            android:background="@drawable/back_ground_button2"
             android:drawableRight="@drawable/ic_arrow"
             android:fontFamily="@font/prompt"
             android:padding="15dp"
-            android:text="Loja"
+            android:text="Aceitar Tarefa"
             android:textColor="@color/TextoBotões"
             android:textSize="16sp" />
 
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/ButtonSuporte"
+        <TextView
+            android:id="@+id/Objetivo3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:text="Objetivo: "
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Pontos3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:text="Recompensa: 00,00 Pontos. "
+            android:textSize="17sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ButtonTerceiraTarefa"
+            android:layout_width="324dp"
+            android:layout_height="48dp"
             android:layout_margin="32dp"
-            android:background="@drawable/back_ground_button"
+            android:background="@drawable/back_ground_button2"
             android:drawableRight="@drawable/ic_arrow"
             android:fontFamily="@font/prompt"
             android:padding="15dp"
-            android:text="Suporte"
+            android:text="Aceitar Tarefa"
             android:textColor="@color/TextoBotões"
             android:textSize="16sp" />
 

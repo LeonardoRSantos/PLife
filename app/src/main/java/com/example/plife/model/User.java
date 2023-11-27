@@ -5,6 +5,7 @@ package com.example.plife.model;
 import com.example.plife.model.enums.Role;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class User {
@@ -16,6 +17,12 @@ public class User {
     private String phoneNumber;
     private Role role; // Adicione o atributo 'role' para definir o papel do usuário
 
+    private int pontos;
+
+    private List<String> insignias;  // Lista de insignias ganhas
+
+
+
     public User(String name, String phoneNumber, String email, String password, Role role) {
         this.email = email;
         this.password = password;
@@ -24,7 +31,8 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public User(String password, Role role) {
+    public User(String login, String password, Role role) {
+        this.name = login;
         this.password = password;
         this.role = role;
     }
@@ -60,11 +68,11 @@ public class User {
         this.password = password;
     }
 
-    public Endereco getAddress() {
+    public Endereco getEndereco() {
         return endereco;
     }
 
-    public void setAddress(Endereco endereco) {
+    public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
 
@@ -90,6 +98,22 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public int getPontos() {
+        return pontos;
+    }
+
+    public void setPontos(int pontos) {
+        this.pontos = pontos;
+    }
+
+    public List<String> getInsignias() {
+        return insignias;
+    }
+
+    public void setInsignias(List<String> insignias) {
+        this.insignias = insignias;
     }
 
     @Override

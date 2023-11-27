@@ -5,15 +5,19 @@ import android.location.Address;
 import com.example.plife.model.enums.Role;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class CnpjUser  extends User {
+
+    private List<TarefaSustentavel> tarefas;
 
     private String CNPJ;
 
     // Atributos específicos de empresa (CNPJ)
     private String razaoSocial;
     private String nomeFantasia;
+
 
     public CnpjUser(String nameFantasia, String phoneNumber, String email, String password, Role role, String razaoSocial, String cnpj) {
         super(nameFantasia, phoneNumber, email, password, role);
@@ -25,7 +29,7 @@ public class CnpjUser  extends User {
 
 
     public CnpjUser(String cnpj, String password, Role role) {
-        super(password,role);
+        super(cnpj,password,role);
         this.CNPJ = cnpj;
     }
 
@@ -57,6 +61,14 @@ public class CnpjUser  extends User {
 
     public void setNomeFantasia(String nomeFantasia) {
         this.nomeFantasia = nomeFantasia;
+    }
+
+    public List<TarefaSustentavel> getTarefas() {
+        return tarefas;
+    }
+
+    public void setTarefas(List<TarefaSustentavel> tarefas) {
+        this.tarefas = tarefas;
     }
 
     @Override

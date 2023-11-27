@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+   <string-array name="Tarefas">
+        <item></item>
+       <item> Reciclar Latas </item>
+       <item> Economizar Água </item>
+       <item> Plantar uma árvore </item>
+       <item> Instalar lixeiras </item>
+       <item> Construir uma horta comunitária </item>
+       <item> Promover o uso de bicicletas </item>
+       <item> Limpeza de rios ou lagos </item>
+       <item> Práticas sustentáveis em empresas</item>
+    </string-array>
+</resources>
+
+
+
+
+
+

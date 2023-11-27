@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B2EA6E"
+    tools:context=".ui.cadastro.tarefas.CadastroTarefasActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:backgroundTint="#409743"
+        android:fitsSystemWindows="true"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="2dp">
+
+        <!--TODO: Fazer um Fragment.-->
+        <ImageView
+            android:id="@+id/imageBack"
+            android:layout_width="30dp"
+            android:layout_height="39dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/baseline_arrow_back_ios_24" />
+
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/user" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimary"
+                android:backgroundTint="#409743"
+                android:fontFamily="@font/prompt_semibold"
+                android:text="Company"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+            <!--TODO: Fazer um Fragment.-->
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="200dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/prompt_semibold"
+            android:text="Tarefas"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textSize="30sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tarefas: "
+            android:textSize="20sp"
+            android:fontFamily="@font/prompt_semibold"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"/>
+
+
+        <Spinner
+            android:id="@+id/spinnerTarefas"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:singleLine="false"
+            android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Objetivo: "
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="4dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:id="@+id/objetivoTarefas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/prompt_semibold"
+            android:textSize="20sp"
+            android:text="‎ "/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="4dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:text="Pontos: "
+            android:textSize="20sp" />
+
+
+
+        <TextView
+            android:id="@+id/pontosTarefa"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/prompt_semibold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Descrição: "
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="4dp"
+                android:fontFamily="@font/prompt_semibold"
+                android:textSize="20sp"/>
+
+            <EditText
+                android:id="@+id/descricaoTarefas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_semibold"
+                android:textSize="20sp"
+                android:text="‎ "/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/prompt_semibold"
+                android:text="Produto: "
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAdicionarImagen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/back_ground_button2"
+                android:drawableRight="@drawable/ic_photo"
+                android:fontFamily="@font/prompt"
+                android:text="Adicionar Foto"
+                android:textColor="@color/TextoBotões"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCadastrarTarefa"
+                android:layout_width="324dp"
+                android:layout_height="48dp"
+                android:layout_margin="32dp"
+                android:background="@drawable/back_ground_button2"
+                android:drawableRight="@drawable/ic_arrow"
+                android:fontFamily="@font/prompt"
+                android:padding="15dp"
+                android:text="Cadastrar"
+                android:textColor="@color/TextoBotões"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

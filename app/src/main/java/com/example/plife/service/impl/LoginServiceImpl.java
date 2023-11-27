@@ -2,6 +2,7 @@ package com.example.plife.service.impl;
 
 import com.example.plife.model.CnpjUser;
 import com.example.plife.model.CpfUser;
+import com.example.plife.model.User;
 import com.example.plife.model.enums.Role;
 import com.example.plife.service.LoginService;
 import com.example.plife.service.RegistrationService;
@@ -49,7 +50,14 @@ public class LoginServiceImpl implements LoginService {
             } else {
                 return "Login falhou. Verifique suas credenciais.";
             }
-        }  else {
+        }else if (login.equals("leonardo")) { // Se o login é um ADMIN // Ajustar aqui depois.
+            User user = new User(login, senha, Role.ROLE_ADMIN);
+                if (login.equals("leonardo") && senha.equals(user.getPassword())) {
+                    return "Login bem-sucedido";
+            } else {
+                return "Login falhou. Verifique suas credenciais.";
+            }
+        }else {
             return "Tipo de usuário não suportado para login.";
         }
     }

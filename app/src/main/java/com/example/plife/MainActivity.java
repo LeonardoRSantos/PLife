@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.plife.controller.LoginController;
+import com.example.plife.controller.UserAdminController;
 import com.example.plife.model.CnpjUser;
 import com.example.plife.model.CpfUser;
 import com.example.plife.model.enums.Role;
@@ -36,7 +37,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         userService = UserServiceImpl.getInstance(getApplicationContext());
+        UserAdminController userAdminController = new UserAdminController(userService);
+        userAdminController.cadastrarUsuarioAdmin("leonardo", "123456");
         registrationService = new RegistrationServiceImpl(userService);
         loginService = new LoginServiceImpl(registrationService,userService);
 
