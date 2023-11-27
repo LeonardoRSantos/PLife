@@ -18,7 +18,7 @@ public class CpfUser extends User {
 
     public CpfUser(String cpf,String password, Role role) {
         super(cpf,password, role);
-//        this.CPF = cpf;
+        this.CPF = cpf;
     }
 
     public CpfUser() {

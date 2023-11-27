@@ -37,10 +37,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        UserAdminController userAdminController = new UserAdminController(userService);
-        userAdminController.cadastrarUsuarioAdmin("leonardo", "123456");
+
 
         userService = UserServiceImpl.getInstance(getApplicationContext());
+        UserAdminController userAdminController = new UserAdminController(userService);
+        userAdminController.cadastrarUsuarioAdmin("leonardo", "123456");
         registrationService = new RegistrationServiceImpl(userService);
         loginService = new LoginServiceImpl(registrationService,userService);
 

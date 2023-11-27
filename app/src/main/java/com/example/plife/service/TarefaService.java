@@ -13,4 +13,6 @@ public interface TarefaService {
       List<TarefaSustentavel> getTarefasDisponiveisCpf();
 
       String validarTarefa(String adminUsername, Long tarefaId);
+
+      String aceitarTarefa(String userCpf, Long tarefaId);
 }

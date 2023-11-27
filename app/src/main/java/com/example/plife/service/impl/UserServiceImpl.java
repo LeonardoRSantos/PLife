@@ -132,23 +132,32 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getUserAdminList() {
+    public List<User> getUsersAdminList() {
         return userAdminList;
+    }
+    @Override
+    public List<CpfUser> getUsersCpf() {
+        return userCpfList;
     }
 
     private void loadUserList() {
-        String userAdminList = sharedPreferences.getString("userAdminList", null);
+        String userAdminListJson = sharedPreferences.getString("userAdminList", null);
         String userCpfListJson = sharedPreferences.getString("userCpfList", null);
         String userCnpjListJson = sharedPreferences.getString("userCnpjList", null);
-            if (userCpfListJson != null) {
-                userCpfList = gson.fromJson(userCpfListJson, USER_CPF_LIST_TYPE);
-            }else if(userCnpjListJson != null){
-                userCnpjList = gson.fromJson(userCnpjListJson, USER_CNPJ_LIST_TYPE);
-            }else if(userAdminList != null){
-                userAdminList = gson.fromJson(userAdminList, USER_ADMIN_LIST_TYPE);
-            }
 
+        if (userAdminListJson != null) {
+            userAdminList = gson.fromJson(userAdminListJson, USER_ADMIN_LIST_TYPE);
+        }
+
+        if (userCpfListJson != null) {
+            userCpfList = gson.fromJson(userCpfListJson, USER_CPF_LIST_TYPE);
+        }
+
+        if (userCnpjListJson != null) {
+            userCnpjList = gson.fromJson(userCnpjListJson, USER_CNPJ_LIST_TYPE);
+        }
     }
+
 
 
 
@@ -161,9 +170,10 @@ public class UserServiceImpl implements UserService {
         String userCnpjListJson = gson.toJson(userCnpjList, USER_CNPJ_LIST_TYPE);
 
         // Salvando as listas específicas no SharedPreferences
-        editor.putString("userAdminList", userCpfListJson);
+        editor.putString("userAdminList", userAdminListJson);
         editor.putString("userCpfList", userCpfListJson);
         editor.putString("userCnpjList", userCnpjListJson);
         editor.apply();
     }
+
 }

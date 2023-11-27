@@ -30,7 +30,7 @@ public class CnpjUser  extends User {
 
     public CnpjUser(String cnpj, String password, Role role) {
         super(cnpj,password,role);
-//        this.CNPJ = cnpj;
+        this.CNPJ = cnpj;
     }
 
     public CnpjUser() {

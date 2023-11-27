@@ -12,27 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PLife"
         tools:targetApi="31">
-        <activity
-            android:name=".Suporte"
-            android:exported="false" />
-        <activity
-            android:name=".Loja_Empresa"
-            android:exported="false" />
-        <activity
-            android:name=".Historico_Tarefas"
-            android:exported="false" />
-        <activity
-            android:name=".cadastro_tarefas"
-            android:exported="false" />
-        <activity
-            android:name=".Loja_usuario"
-            android:exported="false" />
-        <activity
-            android:name=".tarefas_usuario"
-            android:exported="false" />
-        <activity
-            android:name=".tela_empresa"
-            android:exported="false" />
+        <activity android:name=".ui.cadastro.tarefas.CadastroTarefasActivity"
+                  android:exported="false"/>
+
         <activity
             android:name=".ui.menu.MenuCompanyActivity"
             android:exported="false" />

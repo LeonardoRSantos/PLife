@@ -57,6 +57,15 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tarefa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/prompt_semibold"
+            android:text="tarefa: "
+            android:textSize="20sp" />
+
+        <TextView
             android:id="@+id/Objetivo1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
