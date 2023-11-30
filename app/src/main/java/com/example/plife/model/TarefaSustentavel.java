@@ -23,12 +23,12 @@ public class TarefaSustentavel {
 
     // Construtor e métodos getters e setters
 
-    public TarefaSustentavel(CnpjUser cnpjUser, String tipo, String objetivo, int pontos, String descricao, String produto) {
+    public TarefaSustentavel(CnpjUser cnpjUser, String tipo, String objetivo, int pontos, String descricao) {
         this.tipo = tipo;
         this.objetivo = objetivo;
         this.pontos = pontos;
         this.descricao = descricao;
-        this.produto = produto;
+//        this.produto = produto;
         this.cnpjUser = cnpjUser;
         this.id = ++contador;
     }

@@ -139,6 +139,10 @@ public class UserServiceImpl implements UserService {
     public List<CpfUser> getUsersCpf() {
         return userCpfList;
     }
+    @Override
+    public List<CnpjUser> getUsersCnpj() {
+        return userCnpjList;
+    }
 
     private void loadUserList() {
         String userAdminListJson = sharedPreferences.getString("userAdminList", null);

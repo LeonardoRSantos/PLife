@@ -32,7 +32,11 @@ public class TarefaServiceImpl implements TarefaService {
     private List<TarefaSustentavel> cpfUserTarefasList;
     private List<TarefaSustentavel> cnpjUserTarefasList;
     private List<TarefaSustentavel> adminTarefasList;
+
     private static final String TAREFA_LIST_KEY = "tarefaSustentavelList";
+    private static final String CPF_USER_LIST_KEY = "cpfUserTarefasList";
+    private static final String CNPJ_USER_LIST_KEY = "cnpjUserTarefasList";
+    private static final String ADMIN_USER_LIST_KEY = "adminTarefasList";
     private static final String TAREFA_IMAGE_DIRECTORY = "tarefa_images";
 
     private SharedPreferences sharedPreferences;
@@ -65,7 +69,8 @@ public class TarefaServiceImpl implements TarefaService {
             tarefaSustentavel.setCnpjUser(cnpjUser);
 
             // Salva a imagem e obtém o caminho
-            String caminhoImagem = salvarImagenMemoriaInterna(imagemStream);
+//            String caminhoImagem = salvarImagenMemoriaInterna(imagemStream);
+            String caminhoImagem = salvarImagenMemoriaInterna(imagemStream, tarefaSustentavel.getDescricao());
 
             // Associa o caminho da imagem à tarefa
             tarefaSustentavel.setProduto(caminhoImagem);
@@ -86,15 +91,14 @@ public class TarefaServiceImpl implements TarefaService {
             // Salva a lista de tarefas no SharedPreferences
             saveTarefaList();
 
-            return "Tarefa cadastrada com sucesso.";
+            return "Tarefa cadastrada com sucesso";
         } catch (Exception e) {
             e.printStackTrace(); // Isso imprime a exceção no console. Modifique conforme necessário.
             return "Erro ao cadastrar a tarefa. Por favor, tente novamente.";
         }
     }
 
-
-    private String salvarImagenMemoriaInterna(InputStream imagemStream) {
+    private String salvarImagenMemoriaInterna(InputStream imagemStream, String descricao) {
         try {
             // Cria um diretório para armazenar as imagens se não existir
             File directory = new File(context.getFilesDir(), TAREFA_IMAGE_DIRECTORY);
@@ -102,8 +106,8 @@ public class TarefaServiceImpl implements TarefaService {
                 directory.mkdir();
             }
 
-            // Gera um nome único para a imagem
-            String imageName = UUID.randomUUID().toString() + ".png";
+            // Gera um nome único para a imagem usando a descrição fornecida pelo usuário
+            String imageName = descricao.replaceAll("\\s+", "_") + ".png";
 
             // Cria o arquivo da imagem no diretório
             File imagePath = new File(directory, imageName);
@@ -123,9 +127,44 @@ public class TarefaServiceImpl implements TarefaService {
             return imageName;
         } catch (IOException e) {
             e.printStackTrace();
-            return "Ocorreu algum erro, não foi salvar a imagen.";
+            return "Ocorreu algum erro, não foi possível salvar a imagem.";
         }
     }
+
+
+
+//    private String salvarImagenMemoriaInterna(InputStream imagemStream) {
+//        try {
+//            // Cria um diretório para armazenar as imagens se não existir
+//            File directory = new File(context.getFilesDir(), TAREFA_IMAGE_DIRECTORY);
+//            if (!directory.exists()) {
+//                directory.mkdir();
+//            }
+//
+//            // Gera um nome único para a imagem
+//            String imageName = UUID.randomUUID().toString() + ".png";
+//
+//            // Cria o arquivo da imagem no diretório
+//            File imagePath = new File(directory, imageName);
+//            FileOutputStream fos = new FileOutputStream(imagePath);
+//
+//            // Lê o InputStream da imagem e grava no arquivo
+//            byte[] buffer = new byte[1024];
+//            int bytesRead;
+//            while ((bytesRead = imagemStream.read(buffer)) != -1) {
+//                fos.write(buffer, 0, bytesRead);
+//            }
+//
+//            // Fecha o FileOutputStream e o InputStream
+//            fos.close();
+//            imagemStream.close();
+//
+//            return imageName;
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            return "Ocorreu algum erro, não foi salvar a imagen.";
+//        }
+//    }
 
     @Override
     public String validarTarefa(String adminUsername, Long tarefaId) {
@@ -172,22 +211,26 @@ public class TarefaServiceImpl implements TarefaService {
 
     private void loadTarefaList() {
         String tarefaListJson = sharedPreferences.getString(TAREFA_LIST_KEY, null);
-        String cpfUserTarefasListJson = sharedPreferences.getString("cpfUserTarefasList", null);
-        String cnpjUserTarefasListJson = sharedPreferences.getString("cnpjUserTarefasList", null);
-        String adminTarefasListJson = sharedPreferences.getString("adminTarefasList", null);
+        String cpfUserTarefasListJson = sharedPreferences.getString(CPF_USER_LIST_KEY, null);
+        String cnpjUserTarefasListJson = sharedPreferences.getString(CNPJ_USER_LIST_KEY, null);
+        String adminTarefasListJson = sharedPreferences.getString(ADMIN_USER_LIST_KEY, null);
 
         if (tarefaListJson != null) {
             Type tarefaListType = new TypeToken<List<TarefaSustentavel>>() {}.getType();
             tarefaSustentavelList = gson.fromJson(tarefaListJson, tarefaListType);
-        } else if (cpfUserTarefasListJson != null) {
+        }
+        if (cpfUserTarefasListJson != null) {
             Type tarefaListType = new TypeToken<List<TarefaSustentavel>>() {}.getType();
             cpfUserTarefasList = gson.fromJson(cpfUserTarefasListJson, tarefaListType);
 
-        } else if (cnpjUserTarefasListJson != null) {
+        }
+        if (cnpjUserTarefasListJson != null) {
             Type tarefaListType = new TypeToken<List<TarefaSustentavel>>() {}.getType();
             cnpjUserTarefasList = gson.fromJson(cnpjUserTarefasListJson, tarefaListType);
 
-        } else if (adminTarefasListJson != null) {
+        }
+
+        if (adminTarefasListJson != null) {
             Type tarefaListType = new TypeToken<List<TarefaSustentavel>>() {}.getType();
             adminTarefasList = gson.fromJson(adminTarefasListJson, tarefaListType);
         }
@@ -200,11 +243,14 @@ public class TarefaServiceImpl implements TarefaService {
         String adminTarefasListJson = gson.toJson(adminTarefasList);
         String tarefaListJson = gson.toJson(tarefaSustentavelList);
         editor.putString(TAREFA_LIST_KEY, tarefaListJson);
-        editor.putString("cpfUserTarefasList", cpfUserTarefasListJson);
-        editor.putString("cnpjUserTarefasList", cnpjUserTarefasListJson);
-        editor.putString("adminTarefasList", adminTarefasListJson);
+        editor.putString(CPF_USER_LIST_KEY, cpfUserTarefasListJson);
+        editor.putString(CNPJ_USER_LIST_KEY, cnpjUserTarefasListJson);
+        editor.putString(ADMIN_USER_LIST_KEY, adminTarefasListJson);
 
         editor.apply();
+//        editor.apply();
+//        editor.apply();
+//        editor.apply();
     }
 
     @Override

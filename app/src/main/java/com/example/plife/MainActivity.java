@@ -18,6 +18,7 @@ import com.example.plife.service.LoginService;
 import com.example.plife.service.RegistrationService;
 import com.example.plife.service.impl.LoginServiceImpl;
 import com.example.plife.service.impl.RegistrationServiceImpl;
+import com.example.plife.service.impl.TarefaServiceImpl;
 import com.example.plife.service.impl.UserServiceImpl;
 import com.example.plife.ui.cadastro.CadastroActivity;
 import com.example.plife.ui.cadastro.util.MaskUtil;
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
     private UserServiceImpl userService;
 
+    private TarefaServiceImpl tarefaService;
+
     private RegistrationService registrationService;
 
     @Override
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         userService = UserServiceImpl.getInstance(getApplicationContext());
+        tarefaService = TarefaServiceImpl.getInstance(getApplicationContext());
         UserAdminController userAdminController = new UserAdminController(userService);
         userAdminController.cadastrarUsuarioAdmin("leonardo", "123456");
         registrationService = new RegistrationServiceImpl(userService);
