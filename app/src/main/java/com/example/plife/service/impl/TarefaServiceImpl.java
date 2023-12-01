@@ -254,7 +254,18 @@ public class TarefaServiceImpl implements TarefaService {
     }
 
     @Override
-    public List<TarefaSustentavel> getTarefasDisponiveisCpf() {
+    public List<TarefaSustentavel> getTarefasPorCnpj(CnpjUser cnpjUser) {
+        List<TarefaSustentavel> tarefasPorCnpj = new ArrayList<>();
+        for (TarefaSustentavel tarefa : cnpjUserTarefasList) {
+            if (tarefa.getCnpjUser().equals(cnpjUser)) {
+                tarefasPorCnpj.add(tarefa);
+            }
+        }
+        return tarefasPorCnpj;
+    }
+
+    @Override
+    public List<TarefaSustentavel> getTarefasDisponiveisCpf(CpfUser cpfUser) {
         // Retorna a lista de tarefas disponíveis para usuários do tipo CPF
         List<TarefaSustentavel> tarefasDisponiveis = new ArrayList<>();
         for (TarefaSustentavel tarefa : tarefaSustentavelList) {
@@ -287,12 +298,12 @@ public class TarefaServiceImpl implements TarefaService {
                 // Salvar as listas atualizadas no SharedPreferences
                 saveTarefaList();
                 // Informações sobre a tarefa aceita
-                String mensagem = "Tarefa aceita com sucesso.\n" +
-                        "Tipo: " + tarefa.getTipo() + "\n" +
-                        "Objetivo: " + tarefa.getObjetivo() + "\n" +
-                        "Pontos: " + tarefa.getPontos();
+//                String mensagem = "Tarefa aceita com sucesso.\n" +
+//                        "Tipo: " + tarefa.getTipo() + "\n" +
+//                        "Objetivo: " + tarefa.getObjetivo() + "\n" +
+//                        "Pontos: " + tarefa.getPontos();
 
-                return mensagem;
+                return "Tarefa aceita com sucesso.";
 
 
 //                // Adicionar a tarefa na lista de tarefas da empresa (CNPJ)

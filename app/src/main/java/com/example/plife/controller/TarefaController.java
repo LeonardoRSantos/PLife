@@ -3,6 +3,7 @@ package com.example.plife.controller;
 import android.content.Context;
 
 import com.example.plife.model.CnpjUser;
+import com.example.plife.model.CpfUser;
 import com.example.plife.model.TarefaSustentavel;
 import com.example.plife.service.TarefaService;
 import com.example.plife.service.impl.TarefaServiceImpl;
@@ -27,11 +28,16 @@ public class TarefaController {
         return tarefaService.validarTarefa(adminUsername, tarefaId);
     }
 
-    public List<TarefaSustentavel> getTarefasDisponiveisCpf() {
-        return tarefaService.getTarefasDisponiveisCpf();
+    public List<TarefaSustentavel> getTarefasDisponiveisCpf(CpfUser cpfUser) {
+        return tarefaService.getTarefasDisponiveisCpf(cpfUser);
     }
 
     public String aceitarTarefa(String userCpf, Long tarefaId) {
         return tarefaService.aceitarTarefa(userCpf, tarefaId);
     }
+
+    public List<TarefaSustentavel> getTarefasPorCnpj(CnpjUser cnpjUser) {
+        return tarefaService.getTarefasPorCnpj(cnpjUser);
+    }
+
 }
