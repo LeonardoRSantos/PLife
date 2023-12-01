@@ -12,10 +12,12 @@ public interface TarefaService {
       String cadastrarTarefaCnpj(CnpjUser cnpjUser, TarefaSustentavel tarefaSustentavel, InputStream imagemStream);
 
       List<TarefaSustentavel> getTarefasDisponiveisCpf(CpfUser cpfUser);
+      List<TarefaSustentavel> getTarefasAceitasCpf(CpfUser cpfUser);
 
       List<TarefaSustentavel> getTarefasPorCnpj(CnpjUser cnpjUser);
 
       String validarTarefa(String adminUsername, Long tarefaId);
 
       String aceitarTarefa(String userCpf, Long tarefaId);
+      String concluirTarefa(String userCpf, Long tarefaId, InputStream imagemStream);
 }

@@ -1,6 +1,8 @@
 package com.example.plife.model;
 
 
+import android.net.Uri;
+
 import com.example.plife.model.enums.Status;
 
 import java.util.Objects;
@@ -15,11 +17,16 @@ public class TarefaSustentavel {
     private String descricao;
     private String produto; // Caminho da imagem ou outro identificador
 
+    private String provaTarefa;
+
     private boolean validado;
 
     private CnpjUser cnpjUser;
 
     private Status status = Status.DISPONIVEL;
+
+    private Uri imagemUri;
+
 
     // Construtor e métodos getters e setters
 
@@ -69,6 +76,14 @@ public class TarefaSustentavel {
         return pontos;
     }
 
+    public Uri getImagemUri() {
+        return imagemUri;
+    }
+
+    public void setImagemUri(Uri imagemUri) {
+        this.imagemUri = imagemUri;
+    }
+
     public void setPontos(int pontos) {
         this.pontos = pontos;
     }
@@ -87,6 +102,14 @@ public class TarefaSustentavel {
 
     public void setProduto(String produto) {
         this.produto = produto;
+    }
+
+    public String getProvaTarefa() {
+        return provaTarefa;
+    }
+
+    public void setProvaTarefa(String provaTarefa) {
+        this.provaTarefa = provaTarefa;
     }
 
     public boolean isValidado() {

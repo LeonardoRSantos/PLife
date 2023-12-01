@@ -59,9 +59,10 @@
 
         <ImageView
             android:id="@+id/LogoPlife"
-            android:layout_width="wrap_content"
-            android:layout_height="197dp"
-            android:layout_marginTop="13dp"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
             android:fontFamily="@font/prompt"
             app:srcCompat="@drawable/logolife" />
 

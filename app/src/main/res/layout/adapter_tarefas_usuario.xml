@@ -114,9 +114,11 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnAceitarTarefaUsuario"
-            android:layout_width="324dp"
-            android:layout_height="48dp"
-            android:layout_margin="32dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/back_ground_button2"
             android:drawableRight="@drawable/ic_arrow"
             android:fontFamily="@font/prompt"

@@ -85,9 +85,9 @@ public class CadastroTarefasActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
-                if(intent.resolveActivity(getPackageManager()) != null){
+//                if(intent.resolveActivity(getPackageManager()) != null){
                     startActivityForResult(intent,SELECAO_GALERIA);
-                }
+//                }
 
             }
         });

@@ -140,11 +140,28 @@
             android:textColor="@color/VerdeBarra"
             android:textSize="16sp" />
 
+<!--        <Button-->
+<!--            android:id="@+id/btnContinuar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="16dp"-->
+<!--            android:layout_marginRight="16dp"-->
+<!--            android:layout_marginTop="150dp"-->
+<!--            android:background="@drawable/back_ground_button"-->
+<!--            android:fontFamily="@font/calibri"-->
+<!--            android:text="Continuar"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="#D01C3A1D"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textStyle="bold" />-->
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnCadastrarCompany"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="32dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/back_ground_button"
             android:drawableRight="@drawable/ic_arrow"
             android:fontFamily="@font/prompt_semibold"

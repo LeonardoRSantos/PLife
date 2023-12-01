@@ -10,10 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.plife.R;
 import com.example.plife.ui.cadastro.tarefas.CadastroTarefasActivity;
 import com.example.plife.ui.cadastro.tarefas.HistoricoTarefasUsuarioActivity;
+import com.example.plife.ui.cadastro.tarefas.TarefasUsuariosAceitasActivity;
 
 public class MenuUsuarioActivity extends AppCompatActivity {
 
-    Button btnTarefasUsuario;
+    Button btnTarefasUsuario, btnTarefasAceitasUsuario;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +26,15 @@ public class MenuUsuarioActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuUsuarioActivity.this, HistoricoTarefasUsuarioActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnTarefasAceitasUsuario = findViewById(R.id.btnTarefasAceitasUsuario);
+        btnTarefasAceitasUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuUsuarioActivity.this, TarefasUsuariosAceitasActivity.class);
                 startActivity(intent);
             }
         });

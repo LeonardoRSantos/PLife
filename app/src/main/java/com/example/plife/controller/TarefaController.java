@@ -32,8 +32,16 @@ public class TarefaController {
         return tarefaService.getTarefasDisponiveisCpf(cpfUser);
     }
 
+    public List<TarefaSustentavel> getTarefasAceitas(CpfUser cpfUser) {
+        return tarefaService.getTarefasAceitasCpf(cpfUser);
+    }
+
     public String aceitarTarefa(String userCpf, Long tarefaId) {
         return tarefaService.aceitarTarefa(userCpf, tarefaId);
+    }
+
+    public String concluirTarefa(String userCpf, Long tarefaId, InputStream imagemStream) {
+        return tarefaService.concluirTarefa(userCpf, tarefaId, imagemStream);
     }
 
     public List<TarefaSustentavel> getTarefasPorCnpj(CnpjUser cnpjUser) {

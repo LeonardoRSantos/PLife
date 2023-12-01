@@ -4,6 +4,8 @@ public enum Status {
 
     DISPONIVEL("DISPONÍVEL"),
     ACEITA("ACEITA"),
+
+    FINALIZADA("FINALIZADA"),
     CONCLUIDA("CONCLUÍDA"),
     VALIDADA("VALIDADA");
 
